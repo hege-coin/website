@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 374.61 456.09">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#drop-shadow-4);
+        font-family: DelaGothicOne-Regular, 'Dela Gothic One';
+        font-size: 712.92px;
+      }
+
+      .cls-2 {
+        opacity: .07;
+      }
+
+      .cls-3 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-4 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-7 {
+        fill: #1b1b1b;
+      }
+    </style>
+    <filter id="drop-shadow-4" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="13"/>
+      <feGaussianBlur result="blur" stdDeviation="0"/>
+      <feFlood flood-color="#0f0f0f" flood-opacity="1"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-2">
+    <text class="cls-1" transform="translate(-87.72 -254.25) rotate(1.26)"><tspan class="cls-6" x="0" y="0">H</tspan><tspan class="cls-3" x="632.36" y="0">E</tspan><tspan class="cls-5" x="1200.04" y="0">G</tspan><tspan class="cls-4" x="1830.4" y="0">E</tspan></text>
+  </g>
+  <path class="cls-7" d="M329.81,0H44.8C20.06,0,0,20.06,0,44.8v366.48c0,24.75,20.06,44.8,44.8,44.8h285.01c24.74,0,44.8-20.06,44.8-44.8V44.8c0-24.74-20.06-44.8-44.8-44.8ZM79.31,70.63h57.84c9.66,0,17.49,7.83,17.49,17.49s-7.83,17.49-17.49,17.49h-57.84c-9.66,0-17.49-7.83-17.49-17.49s7.83-17.49,17.49-17.49ZM79.31,140.6h57.84c9.66,0,17.49,7.83,17.49,17.49s-7.83,17.49-17.49,17.49h-57.84c-9.66,0-17.49-7.83-17.49-17.49s7.83-17.49,17.49-17.49ZM320.35,367.97c0,9.66-7.83,17.49-17.49,17.49H79.31c-9.66,0-17.49-7.83-17.49-17.49h0c0-9.66,7.83-17.49,17.49-17.49h223.55c9.66,0,17.49,7.83,17.49,17.49h0ZM302.86,315.5H79.31c-9.66,0-17.49-7.83-17.49-17.49s7.83-17.49,17.49-17.49h223.55c9.66,0,17.49,7.83,17.49,17.49s-7.83,17.49-17.49,17.49ZM302.86,245.54H79.31c-9.66,0-17.49-7.83-17.49-17.49s7.83-17.49,17.49-17.49h223.55c9.66,0,17.49,7.83,17.49,17.49s-7.83,17.49-17.49,17.49ZM320.35,158.09c0,9.66-7.83,17.49-17.49,17.49h-94.28c-9.66,0-17.49-7.83-17.49-17.49v-69.96c0-9.66,7.83-17.49,17.49-17.49h94.28c9.66,0,17.49,7.83,17.49,17.49v69.96Z"/>
+</svg>
