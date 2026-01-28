@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Cookie consent dialog not found.');
     return false;
   }
-  const accept_button = document.getElementById('accept-cookies-button');
-  const reject_button = document.getElementById('reject-cookies-button');
+  const accept_button = document.getElementById('accept-cookies-btn');
+  const reject_button = document.getElementById('reject-cookies-btn');
   
   accept_button.addEventListener('click', function () {
     debug_log('Handling accept...')
@@ -121,3 +121,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     triggerGeoBlock();   
   }
 });
+
+
+//
+// UTILS
+//
+
+function scrollSlider(id, direction) {
+  var e = document.getElementById(id);
+  let w = e.firstElementChild.scrollWidth;
+  e.scrollLeft += w * direction;
+}
