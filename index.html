@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.a29d6f7f74e98ffe5cea6bd2973581586db69bfcd801f2974252fd5f300e0fe6.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.4b1785a2eeb25e4515ecc354a73ca7c1b6409a69217656e9765d4b64b914068b.png">
     <link rel="canonical" href="https://hegecoin.com/">
-    <link rel="stylesheet" href="/css/style.min.6af52827dff2dca4aab968061bdd43bc90c1fd4a3ab36977623e83de15c089ef.css" integrity="sha256-avUoJ9/y3KSquWgGG91DvJDB/Uo6s2l3Yj6D3hXAie8=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.min.be0087b2c5f2eac8275db96fce8e3464e05ff1cdb460e838992890b52f12055e.css" integrity="sha256-vgCHssXy6sgnXblvzo40ZOBf8c20YOg4mSiQtS8SBV4=" crossorigin="anonymous">
     <script type="text/javascript" src="/js/main.js" async></script>
     <link rel="preload" href="/fonts/dgo.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="preload" href="/fonts/ibmpm.woff2" as="font" type="font/woff2" crossorigin="">
@@ -327,7 +327,7 @@
       <section id="trailer">
         <h2>
           Watch the Hege Trailer
-        </h2>
+        </h2><iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/HUPr0X6jhc4?si=LrqiygkX2Q3XDCmW" title="The $HEGE Triler - A Memecoin Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
       </section>
       <section id="chapters">
         <h2>
@@ -523,39 +523,11 @@
               </p>
             </div>
             <p>
-              <a href="/nfts/" title="Learn more about the Hegends NFT collection" class="btn btn-ok">Learn more</a>
+              <a href="/nfts/" class="btn btn-ok">Learn more here</a>
             </p>
           </div><a href="/nfts/" title="Learn more about the Hegends NFT collection"><img src="/img/hegends-collage.2fadca040aa8f25634e413ecaba168043db982e3beb805bdea67b1add2bc4eca.avif" alt="Hegends" width="1000" height="728" loading="lazy"></a>
         </div>
       </section>
-      <script>
-      const me_url = 'https://api-mainnet.magiceden.dev/v2/collections/hegends/stats';
-      const sol_url = 'https://api.diadata.org/v1/assetQuotation/Solana/0x0000000000000000000000000000000000000000';
-      const cors_proxy = 'https://cors.io/?url='
-      const options = {
-      method: 'GET',
-      headers: {
-      accept: 'application/json'
-      }
-      };
-      document.addEventListener('DOMContentLoaded', function () {
-      const target = document.getElementById('hegends-floor-price');
-      fetch(cors_proxy + encodeURIComponent(sol_url), options)
-      .then(res => res.json())
-      .then(data => {
-        sol_d = JSON.parse(data.body);
-        fetch(cors_proxy + encodeURIComponent(me_url), options)
-          .then(res => res.json())
-          .then(data => {
-            me_d = JSON.parse(data.body);
-            const usd_price = (sol_d.Price * me_d.floorPrice / 1000000000).toFixed(2);
-            target.innerHTML = '$' + usd_price;
-          })
-          .catch(err => console.error(err));
-      })
-      .catch(err => console.error(err));
-      });
-      </script>
       <section id="memes">
         <h2>
           Memes
@@ -715,22 +687,6 @@
         Copyright Hegecoin 2025
       </p>
     </footer>
-    <dialog id="cookie-consent-dialog" class="cookie-consent-dialog">
-      <div class="w box">
-        <h2>
-          Cookies or nah?
-        </h2>
-        <p>
-          We use cookies to improve the Hege website. Please accept them! (But if you don't want to, that's cool, too.)
-        </p>
-        <p>
-          Can't make up your mind? Read more on our <a class="hi-viz" href="/cookies">Cookies Page</a>.
-        </p>
-        <form method="dialog">
-          <button id="accept-cookies-btn" class="btn btn-ok" autofocus="">Accept cookies</button> <button id="reject-cookies-btn" class="btn btn-cancel">Reject cookies</button>
-        </form>
-      </div>
-    </dialog>
     <template id="geoblock-msg-template">
       <div class="heavy plain box">
         <h1>
