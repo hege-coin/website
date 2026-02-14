@@ -138,7 +138,7 @@ async function getMessages(last_msg_id) {
 document.addEventListener('DOMContentLoaded', async function () {
   const target_el = document.getElementById('tg-live');
   if (target_el) {
-    loadMessages(getMessages, target_el, 0);
+    // loadMessages(getMessages, target_el, 0);
   }
 });
 
@@ -174,5 +174,5 @@ function setNftFloorPrice(target_el) {
 
 document.addEventListener('DOMContentLoaded', function () {
   const target = document.getElementById('hegends-floor-price');
-  setNftFloorPrice(target);
+  // setNftFloorPrice(target);
 });
