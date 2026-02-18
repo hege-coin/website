@@ -1,4 +1,4 @@
-# Hegecoin docs website
+# Hegecoin website
 
 This repo holds the static HTML for the Hegecoin website, found at [hegecoin.com](https://hegecoin.com).
 

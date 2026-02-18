@@ -1,0 +1,23 @@
+/*.jpg
+  Cache-Control: public, max-age=31556952, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31556952, immutable
+
+/*.avif
+  Cache-Control: public, max-age=31556952, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31556952, immutable
+
+/*.mp4
+  Cache-Control: public, max-age=31556952, immutable
+
+/*.css
+  Cache-Control: public, max-age=31556952, immutable
+
+/*.js
+  Cache-Control: public, max-age=31556952, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31556952, immutable
