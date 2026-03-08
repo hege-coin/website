@@ -6,10 +6,17 @@
     <description>Read the latest about $HEGE here!</description>
     <generator>Hege</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hegecoin.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Shill With HEGE: Come Tell Us What You&#39;re Building!</title>
+      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score (pt. 1)</title>
+      <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/</link>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/</guid>
+      <description>Nailing the PageSpeed Insights performance metric takes a bit of work, but it&amp;rsquo;s totally possible. Even for a slightly traumatized webmonkey with a penchant for furry ears.&#xA;</description>
+    </item>
+    <item>
+      <title>New HEGE X Spaces: Come Tell Us What You&#39;re Building!</title>
       <link>https://hegecoin.com/blog/announcing-shill-with-hege/</link>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://hegecoin.com/blog/announcing-shill-with-hege/</guid>
