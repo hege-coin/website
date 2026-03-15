@@ -13,7 +13,7 @@
       <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/</link>
       <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/</guid>
-      <description>Continuing our journey to PageSpeed Paradise, this week we turn to fonts, showing how compression and heavy subsetting brought 3 Mb of unoptimized font files down to a minimal 18 kB.&#xA;</description>
+      <description>Continuing our journey to PageSpeed Paradise, this week we turn to fonts, showing how compression and heavy subsetting brought 3 MB of unoptimized font files down to a minimal 18 kB.&#xA;</description>
     </item>
     <item>
       <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score (pt. 1)</title>
