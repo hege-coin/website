@@ -62,7 +62,7 @@
 <div class="byline-w">
 <div class="byline">
 <p><em>by</em> <span>Day</span></p>
-<p><span>Project update</span> <span>/</span> <time datetime="2026-03-15T00:00:00Z">March 15, 2026</time></p>
+<p><span>Tech</span> <span>/</span> <time datetime="2026-03-15T00:00:00Z">March 15, 2026</time></p>
 </div>
 </div>
 <div class="c-w">
@@ -71,7 +71,7 @@
 <p>Last week here on the blog, we told you about our very own Head Speedmaster Monkey and how he pulled off the perfect score on the PageSpeed Insights test. It was quite the story actually, so make sure to go <a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">read it</a> if you haven’t already.</p>
 <p>If you did read it, and if your memory is good, you will remember that we covered step 1 of the process, which was to serve static HTML over a fast Content Delivery Network, then fingerprint assets, and finally say no to cookies.</p>
 <p>This week we’re picking up right where we left off, and we’ll dive deep into the next step of the process: optimizing fonts.</p>
-<figure class="image"><a href="/r/1036980348.webp"><img src="/r/1036980348.webp" width="1200" height="1671" alt="Trading card featuring REYNATALES: an anthropomorphic red-haired fox in a deep purple bodysuit, against a backdrop of pink and orange lighting bolts." loading="lazy"></a>
+<figure class="image"><a href="/r/874607312.webp"><img src="/r/874607312.webp" width="1200" height="1671" alt="Trading card featuring REYNATALES: an anthropomorphic red-haired fox in a deep purple bodysuit, against a backdrop of pink and orange lighting bolts." loading="lazy"></a>
 <figcaption>REYNATALES. Power Matrix: [Displace] [Accelerate] [Control]</figcaption>
 </figure>
 <h2 id="step-2-optimize-fonts">Step 2: Optimize Fonts</h2>
@@ -115,11 +115,11 @@
 <p>Because the browser needs the font files to render the page properly, you need to make sure it starts downloading the fonts as early as possible.</p>
 <p>In our case, we put our CSS in an external file, and load it like this:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"stylesheet"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"style.min.css"</span>&gt;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"stylesheet"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"style.min.css"</span>&gt;
 </span></span></code></pre></div>
 <p>And then in this CSS file we have something like this to set up the font:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#f92672">DGO</span><span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">"dgo.woff2"</span><span style="color:#f92672">)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">"woff2"</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-weight</span><span style="color:#f92672">:</span> <span style="color:#f92672">400</span><span style="color:#f92672">;</span>
@@ -134,7 +134,7 @@
 <p>Yes, it would. And you can do exactly that using a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/preload">preload</a> link.</p>
 <p>If you open up the source code on the Hege website you’ll see something like this in the <code>head</code> of the HTML, before the CSS is loaded:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/2812802085.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/2812802085.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/600843795.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/915512105.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/3997950749.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
@@ -154,16 +154,16 @@
 <p>Using the <a href="https://github.com/fonttools/fonttools">fonttools</a> Python library, we created custom subsets that included <em>exactly</em> the characters we needed. No more, no less.</p>
 <p>The fonttools library includes <code>pyftsubset</code>, a handly command line tool to subset fonts with maximum control. This is the incantation we used to subset Dela Gothic One, our headline font:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pyftsubset <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   DelaGothicOne-Regular.ttf <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   --output-file<span style="color:#f92672">=</span>dgo-lean.woff2 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   --text-file<span style="color:#f92672">=</span><span style="color:#e6db74">"chars.txt"</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   --flavor<span style="color:#f92672">=</span>woff2 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   --layout-features<span style="color:#f92672">=</span>kern
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pyftsubset <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   DelaGothicOne-Regular.ttf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   --output-file<span style="color:#f92672">=</span>dgo-lean.woff2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   --text-file<span style="color:#f92672">=</span><span style="color:#e6db74">"chars.txt"</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   --flavor<span style="color:#f92672">=</span>woff2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   --layout-features<span style="color:#f92672">=</span>kern
 </span></span></code></pre></div>
 <p>In the <code>chars.txt</code> file, we can specify the exact characters to include. After analyzing our front page, we realized that we actually didn’t need any other characters for this font than these few:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 </span></span><span style="display:flex;"><span> 0123456789:$/-!.+()'
 </span></span></code></pre></div>
 <p>We then repeated this for our other font files. Doing so we also realized that we could completely remove the italic versions, because we actually didn’t use them on the front page.</p>
@@ -191,16 +191,16 @@
 <p>How to do it?</p>
 <p>It’s simple: you base64-encode the file and then use the “data:” protocol to include it. For a font file in the WOFF2 format, this is how it looks:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">"data:application/x-font-woff2;base64,..."</span><span style="color:#f92672">)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">"woff2"</span><span style="color:#f92672">);</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">"data:application/x-font-woff2;base64,..."</span><span style="color:#f92672">)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">"woff2"</span><span style="color:#f92672">);</span>
 </span></span></code></pre></div>
 <p>Knowing this, we took our original font files, base64-encoded them, and inlined them straight into the HTML.</p>
 <p>First we base64-encoded:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>base64 -i dgo-lean.woff2 -o dgo-lean.woff2.base64
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>base64 -i dgo-lean.woff2 -o dgo-lean.woff2.base64
 </span></span></code></pre></div>
 <p>Then we changed our <code>@font-face</code> definitions to reference the base64-encoded data instead of the external font files, like so:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span>{
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#f92672">DGO</span><span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">data</span>:<span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#f92672">x-font-woff2</span><span style="color:#f92672">;</span><span style="color:#f92672">base64</span><span style="color:#f92672">,</span><span style="color:#f92672">d09GMgAB</span><span style="color:#f92672">...)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">"woff2"</span><span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-weight</span><span style="color:#f92672">:</span> <span style="color:#f92672">400</span><span style="color:#f92672">;</span>
@@ -230,7 +230,7 @@
 <p>Until then, have a great week, and make sure to jump into our Telegram and say hi to all the Hegends in there. Good vibes guaranteed!</p>
 <p><em>— Team Hege</em></p>
 <p>PS. Check out the piece “ICEGENA” below. This ULTIMATE collectible is <a href="https://drip.haus/hegecoin/collectible/hegecoin-drip-lightbringer-080d82c4">up for sale on DRiP!</a></p>
-<figure class="image"><a href="/r/1270347117.webp"><img src="/r/1270347117.webp" width="1200" height="1671" alt="Trading card featuring ICEGENA: a purple Hegena clad in crystalline body armor, set against a backdrop of splashing water and sharp ice shards." loading="lazy"></a>
+<figure class="image"><a href="/r/1635479918.webp"><img src="/r/1635479918.webp" width="1200" height="1671" alt="Trading card featuring ICEGENA: a purple Hegena clad in crystalline body armor, set against a backdrop of splashing water and sharp ice shards." loading="lazy"></a>
 <figcaption>ICEGENA. Element: 💧 Power Matrix: [Suppress] [Crystallise] [Control]</figcaption>
 </figure>
 </div>

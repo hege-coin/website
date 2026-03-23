@@ -2,7 +2,7 @@
 <html lang="en-us" dir="ltr">
 <head>
 <meta charset="utf-8">
-<title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score (pt. 1) | Hege</title>
+<title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 1: Big Picture | Hege</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="canonical" href="https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">
 <link rel="preload" href="/r/2812802085.woff2" as="font" type="font/woff2" crossorigin="">
@@ -56,13 +56,13 @@
 <section id="blog-entry">
 <article class="blog-article">
 <div class="h">
-<h1>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score (pt. 1)</h1>
+<h1>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 1: Big Picture</h1>
 <p>Nailing the PageSpeed Insights performance metric takes a bit of work, but it’s totally possible. Even for a slightly traumatized webmonkey with a penchant for furry ears.</p>
 </div>
 <div class="byline-w">
 <div class="byline">
 <p><em>by</em> <span>Day</span></p>
-<p><span>Project update</span> <span>/</span> <time datetime="2026-03-08T00:00:00Z">March 8, 2026</time></p>
+<p><span>Tech</span> <span>/</span> <time datetime="2026-03-08T00:00:00Z">March 8, 2026</time></p>
 </div>
 </div>
 <div class="c-w">
@@ -130,7 +130,7 @@
 <p>Your page will have lots of different assets, like images, JavaScript, and CSS files. Fingerprinting these means that you put a hash of the asset file into the filename of the asset.</p>
 <p>Most static site generators have built-in functionality for this. In Hugo for example, use the built-in <code>fingerprint</code> function:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ with resources.Get "js/main.js" | minify | fingerprint }}
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ with resources.Get "js/main.js" | minify | fingerprint }}
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"text/javascript"</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"{{ .RelPermalink }}"</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>{{ end }}
 </span></span></code></pre></div>
@@ -139,7 +139,7 @@
 <p>The point is that putting a hash of the file into the filename means that you will never have a problem with stale caches. Because whenever the content of the file changes, the filename changes.</p>
 <p>You can then tell browsers to cache the fingerprinted assets as long as possible with no worries about caches not updating as needed. On Cloudflare, we do this with a special <a href="https://developers.cloudflare.com/pages/configuration/headers/">"_headers" file</a>:</p>
 <div class="highlight">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/*.js
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/*.js
 </span></span><span style="display:flex;"><span>  Cache-Control: public, max-age=31556952, immutable 
 </span></span></code></pre></div>
 <p>Setting this HTTP response header means that all our JavaScript files will be cached for 1 year (maximum time), and that the browser never even has to revalidate them. It will simply pull the files straight from cache the next time the user loads the page, with zero network overhead.</p>
@@ -158,7 +158,7 @@
 <p>Until then, have a great week, and make sure to jump into our Telegram and say hi to all the Hegends there. Good vibes guaranteed!</p>
 <p><em>— Team Hege</em></p>
 <p>PS. Check out the piece “Lightbringer” below. This collectible is <a href="https://drip.haus/hegecoin/collectible/hegecoin-drip-lightbringer-080d82c4">up for sale on DRiP!</a></p>
-<figure class="image"><a href="/r/1263535348.webp"><img src="/r/1263535348.webp" width="1200" height="1200" alt="Hege conjures a ball of limitless power, shining light wherever he goes, particularly in the darkest of times." loading="lazy"></a>
+<figure class="image"><a href="/r/181463198.webp"><img src="/r/181463198.webp" width="1200" height="1200" alt="Hege conjures a ball of limitless power, shining light wherever he goes, particularly in the darkest of times." loading="lazy"></a>
 <figcaption>Hege conjures a ball of limitless power, shining light wherever he goes, particularly in the darkest of times.</figcaption>
 </figure>
 </div>

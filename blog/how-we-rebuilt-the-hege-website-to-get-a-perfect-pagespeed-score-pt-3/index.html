@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 3: Optimize Images | Hege</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/">
+<link rel="preload" href="/r/2812802085.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/600843795.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/915512105.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/3997950749.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/636367663.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/r/1288513766.min.css">
+<meta name="author" content="Hege">
+<meta name="description" content="With fonts down, we turn our performance hungry snouts to images, and sniff out how to use AVIF, MP4, lazy loading and more to reach the promised land of PageSpeed perfection.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hegecoin.com/r/1613655752.jpg">
+<link rel="alternate" type="application/atom+xml" href="https://hegecoin.com/blog/index.xml" title="Hegecoin">
+<link rel="sitemap" type="application/xml" href="https://hegecoin.com/sitemap.xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/r/2297846202.png">
+<link rel="apple-touch-icon" href="/r/3923634518.png">
+<script type="text/javascript" src="/r/70001869.min.js" async fetchpriority="low"></script>
+</head>
+<body id="b" class="">
+<header id="h">
+<nav class="full"><a href="/" class="logo"><img width="822" height="205" src="/r/2607289839.svg" alt="HEGE" fetchpriority="high"></a>
+<ul>
+<li><a href="/about/" title="Read all about Hege">About</a></li>
+<li><a href="https://shop.hegecoin.com" title="Shop in the Hege Merch Store" target="_blank">Merch</a></li>
+<li><a href="/blog/" title="Read the latest about Hege">Blog</a></li>
+<li><a href="/nfts/" title="Visit Hege's official NFT collection">NFTs</a></li>
+<li><span onclick="document.getElementById('nav-more').classList.toggle('open'); rha()">More <svg width="14" height="7" viewbox="0 0 14 7" fill="none">
+<path d="M13 1L7 5L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+<div id="nav-more">
+<ul id="nav-items">
+<li class="hegends-item"><a href="/nfts/" title="Visit Hege's official NFT collection">
+<div class="h-a" data-frames="/r/3446319882.avif;/r/168622860.avif;/r/785041076.avif;/r/1978746780.avif;/r/3685339383.avif"><img class="show" src="/r/1959589881.avif" width="750" height="750" loading="lazy" alt="Hegend 1"></div>
+<span><strong>Hegends NFTs</strong> <em>Learn more about our NFT collection!</em></span></a></li>
+<li><a href="/league-of-hegends/"><img src="/r/3745193089.svg" width="30" height="30" alt="A globe" fetchpriority="low" loading="lazy"> <span><strong>League of Hegends</strong> <em>Meet our most valued community members</em></span></a></li>
+<li><a href="https://t.me/Hegequarters" target="_blank" class="ext"><img src="/r/2111933442.svg" width="512" height="431" alt="Telegram logo" fetchpriority="low" loading="lazy"> <span><strong>Telegram</strong> <em>Join the fun in our Hegequarters</em></span></a></li>
+<li><a href="/testimonials"><img src="/r/4054869380.svg" width="300" height="226" alt="Photograph icon" fetchpriority="low" loading="lazy"> <span><strong>Media</strong> <em>What's being said about $HEGE</em></span></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank" class="ext"><img src="/r/610068670.svg" width="300" height="272" alt="A bar chart icon" fetchpriority="low" loading="lazy"> <span><strong>Price Chart</strong> <em>Track the $HEGE price by the second</em></span></a></li>
+<li><a href="/#faq" onclick="document.getElementById('nav-more').classList.remove('open')"><img src="/r/333550920.svg" width="30" height="30" alt="?" fetchpriority="low" loading="lazy"> <span><strong>FAQs</strong> <em>Answers to frequently asked questions</em></span></a></li>
+<li><a href="https://www.reddit.com/r/HegeCoin/" target="_blank" class="ext"><img src="/r/1609170980.svg" width="30" height="30" alt="Reddit logo" fetchpriority="low" loading="lazy"> <span><strong>Reddit</strong> <em>Join over 1,200 Hegends on Reddit!</em></span></a></li>
+<li><a href="https://drip.haus/hegecoin" target="_blank" class="ext"><img src="/r/407803855.svg" width="30" height="30" alt="A drop" fetchpriority="low" loading="lazy"> <span><strong>DRiP</strong> <em>Check out $HEGE on art platform DRiP</em></span></a></li>
+<li><a href="https://capitoday.com/meme/hege-coin" target="_blank" class="ext"><img src="/r/298893401.svg" width="30" height="30" alt="Capitoday logo" fetchpriority="low" loading="lazy"> <span><strong>Capitoday</strong> <em>Track and vote for $HEGE on Capitoday</em></span></a></li>
+</ul>
+</div>
+</li>
+<li><a href="/#buy" class="yellow btn">Buy $HEGE</a></li>
+</ul>
+<p><button aria-label="Toggle mobile menu" onclick="document.getElementById('nav-c').showModal(); rha()"><img src="/r/2068178453.svg" width="20" height="20" alt="Open menu"></button></p>
+</nav>
+</header>
+<main id="main">
+<section id="blog-entry">
+<article class="blog-article">
+<div class="h">
+<h1>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 3: Optimize Images</h1>
+<p>With fonts down, we turn our performance hungry snouts to images, and sniff out how to use AVIF, MP4, lazy loading and more to reach the promised land of PageSpeed perfection.</p>
+</div>
+<div class="byline-w">
+<div class="byline">
+<p><em>by</em> <span>Day</span></p>
+<p><span>Tech</span> <span>/</span> <time datetime="2026-03-23T00:00:00Z">March 23, 2026</time></p>
+</div>
+</div>
+<div class="c-w">
+<div class="c">
+<h2 id="harder-better-faster-stronger">Harder, Better, Faster, Stronger</h2>
+<p>Last week here on the blog, it was all about fonts. We showed all the tricks we pulled to work <em>3 megabytes</em> of font files down to a final lean <em>18 kilobytes</em>. Go <a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/">read the article</a> if you haven’t already!</p>
+<p>This week we’re diving in to the next part of the stack: images. That’s right, images. So read on for all the details on how to use the best image formats and lazy loading to nail that perfect PageSpeed scorecard.</p>
+<h2 id="optimize-images">Optimize Images</h2>
+<p>Just like choosing optimal formats and using various forms of compression makes a huge difference when it comes to fonts, so too it does for images.</p>
+<p>The Hege website is quite heavy on graphics. The start page on mobile (which is the focus in these articles) has many images and several animations. On our old site, they came in at around 5.5 megabytes altogether. That wasn’t terrible at all, but it clearly wasn’t going to cut it for that perfect score we were gunning for.</p>
+<p>So here’s what we did to get those 5.5 megabytes down to 1.2 megabytes, and to load everything as fast as possible.</p>
+<figure class="image"><a href="/r/2679696172.webp"><img src="/r/2679696172.webp" width="1199" height="1568" alt="Collector card featuring 'Hendrock', a muscular superhero forged of earthen stone." loading="lazy"></a>
+<figcaption>HENDROCKS. Element: 🪨 Power Matrix: [Absorb][Anchor][Return]</figcaption>
+</figure>
+<h2 id="level-1-use-modern-image-formats">Level 1: Use Modern Image Formats</h2>
+<p>As always, basics first. Using the right image formats, plus setting widths and heights everywhere, that’s the low hanging fruit that gives a great return on effort.</p>
+<h3 id="its-2026-use-avif">It’s 2026, Use AVIF!</h3>
+<p>Back in the ancient days, JPEG was what you turned to for images on the web. JPEG has been around forever (= 1992), and it’s an amazing piece of technology. The compression is good, and it’s supported everywhere.</p>
+<p>Then in 2010, Google released their own WebP format, designed to be a universal format for web graphics, covering both images and animations. It’s good, and it produces smaller files than JPEG for the same quality.</p>
+<p>But for max performance web graphics in 2026, neither JPEG nor WebP will cut it.</p>
+<p>Instead, use AVIF.</p>
+<p>AVIF is the newest kid on the image format block. Using the AV1 video compression algorithms, it produces files much smaller than both JPEG and WebP for the same quality. It’s also supported in all major web browsers. (If you really need to support old browsers, use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture">picture element</a> to define fallbacks.)</p>
+<p>How much better is AVIF?</p>
+<p>Let’s take the picture of Helena below as an example.</p>
+<p>Using <a href="https://imagemagick.org/">ImageMagick</a>’s <code>convert</code>, we can convert the original PNG 1280x1280 image to JPEG, WebP, and AVIF, for comparison.</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>convert helena.png helena.jpg
+</span></span><span style="display:flex;"><span>convert helena.png helena.webp
+</span></span><span style="display:flex;"><span>convert helena.png helena.avif
+</span></span></code></pre></div>
+<p>With the default quality settings, this is the result:</p>
+<ul>
+<li>JPEG: 192 kB</li>
+<li>WebP: 53 kB</li>
+<li>AVIF: 26 kB</li>
+</ul>
+<p>Yes. AVIF is really that good. Use it.</p>
+<figure class="image"><a href="/r/2676847911.webp"><img src="/r/2676847911.webp" width="1280" height="1280" alt="Profile picture of Helena, a purple anthropomorphic hedgehog, dressed in a green cardigan, sporting a distintively Karen blond hairdo and large golden earrings." loading="lazy"></a>
+<figcaption>Use AVIF. Helena approves.</figcaption>
+</figure>
+<p>And if you want to try playing around with the quality settings to produce even smaller files, use the <code>-quality</code> parameter:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>convert -quality <span style="color:#ae81ff">54</span> helena.png helena.avif
+</span></span></code></pre></div>
+<p>We found that the default works well enough in most cases though.</p>
+<p>If you want to dive deeper into this topic, Smashing Magazine has a good <a href="https://www.smashingmagazine.com/2021/09/modern-image-formats-avif-webp/">article about using AVIF</a> (it’s a few years old, so browser support is much better now).</p>
+<h3 id="use-mp4s-instead-of-gifs-for-animations">Use MP4s Instead of GIFs for Animations</h3>
+<p>With still images covered, let’s tackle animations.</p>
+<p>Animated GIFs are legendary. In fact, they came onto the scene waay way back, in 1987, years before the web was even a thing. Because of this, they’re supported everywhere. Which is great of course. What’s not so great is that their poor compression creates large files. And that the quality suffers because they’re limited to 256 colors. So you get large files, and bad quality. Not great.</p>
+<p>Can we do better?</p>
+<p>Yes. With MP4.</p>
+<p>By replacing all animated GIFs with MP4 video files, you can deliver the same content with better quality, AND smaller files.</p>
+<p>If you already have GIF files that you want to put on your page, convert them to MP4 video files using the command line tool <a href="https://www.ffmpeg.org/">ffmpg</a>, or an online tool like <a href="https://ezgif.com/gif-to-mp4">Ezgif</a>. (We used Ezgif and it worked fine.)</p>
+<p>Then use the <code>video</code> element to include the MP4 video files on your page:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">video</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">"720"</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">"720"</span> <span style="color:#a6e22e">playsinline</span> <span style="color:#a6e22e">muted</span> <span style="color:#a6e22e">autoplay</span> <span style="color:#a6e22e">loop</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">source</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"hege.mp4"</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">video</span>&gt;
+</span></span></code></pre></div>
+<p>You need the <code>playsinline</code>, <code>autoplay</code>, and <code>loop</code> attributes to make the video behave like a traditional GIF. And you need <code>muted</code> for it to play automatically on some mobile browsers.</p>
+<p>The animation below is an example. It’s an MP4 that displays just the same as a GIF would, but it’s 110 kB instead of 750 kB. In general, using MP4 instead of GIF will reduce file sizes by about 5-10x, at the same or better quality.</p>
+<figure class="video"><video width="" height="" playsinline loop="" muted autoplay=""><source src="/r/1929838325.mp4"></video></figure>
+<h3 id="theres-one-possible-drawback-to-using-mp4s">There’s One Possible Drawback to Using MP4s</h3>
+<p>Replacing GIFs with MP4s is almost perfect. But not quite. Because as it turns out, unlike images loaded with the <code>img</code> element, videos loaded with the <code>video</code> element cannot be lazily loaded. Support for this is being discussed among the gray-beards, but nothing is standardized yet.</p>
+<p>In practice, this means that if you have many videos on the page, that can cause your PageSpeed score to drop because of an excessive page weight.</p>
+<p>Now, there are solutions to this using JavaScript (see level 2 below). But after doing a bunch of experiments, we discovered that neither the user experience nor the PageSpeed score actually suffer unless you have several megabytes of video files. We didn’t, and so in our case it wasn’t worth the extra complexity to lazy-load videos.</p>
+<h3 id="also-remember-set-width-and-height-on-every-image">Also Remember: Set Width and Height on Every Image</h3>
+<p>After optimizing images and videos, there’s one more thing you need to do:</p>
+<p>Set the width and height on every image in your HTML code.</p>
+<p>Why?</p>
+<p>Because of something called <em>cumulative layout shift</em>, or CLS for short.</p>
+<p>If you don’t specify dimensions on your images, the browser has no way of knowing how much space to allocate for them as it starts rendering the page. The browser can’t guess, so every image that it doesn’t know the size of, it has to assume is 0 pixels tall as it starts rendering. As each image then is inserted into the page after being downloaded, the layout of the page has to be adjusted to fit the real size of the image. Each time this happens, it causes other elements to jump around on the page.</p>
+<p>Each of these jumps is called a <em>layout shift</em>, and the CLS is the <em>cumulative</em>, or total, of all of them.</p>
+<p>So make sure to set the width and height of all images in the HTML. This will lower your CLS to zero or near zero, which is what you need for that perfect score, but more importantly also for a perfect user experience.</p>
+<figure class="image"><a href="/r/3146333083.webp"><img src="/r/3146333083.webp" width="945" height="189" alt="Cumulative Layout Shift score: 0.327" loading="lazy"></a>
+<figcaption>CLS before optimization. Not good.</figcaption>
+</figure>
+<figure class="image"><a href="/r/4191049508.webp"><img src="/r/4191049508.webp" width="945" height="189" alt="Cumulative Layout Shift score: 0" loading="lazy"></a>
+<figcaption>CLS after optimization. Perfect.</figcaption>
+</figure>
+<h2 id="level-2-lazy-load">Level 2: Lazy Load</h2>
+<p>We have now reached level 2.</p>
+<p>If all you do is use AVIF and MP4, and set image sizes, that’s already good. If you have a simple page, it might even be enough to nail a perfect score.</p>
+<p>But if not, let’s take it up one level.</p>
+<h3 id="lazy-load-image-to-cut-initial-download-size">Lazy Load Image to Cut Initial Download Size</h3>
+<p>The first step in level 2 will be lazy loading.</p>
+<p>Marking an image as lazy loading will make the browser defer downloading until necessary. Doing it is easy, just set <code>loading="lazy"</code> on the image element:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"hege.avif"</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">"Hege"</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">"1000"</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">"728"</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">"lazy"</span>&gt;
+</span></span></code></pre></div>
+<p>With lazy loading set, if the image is far down the page, the browser will now wait to download it until the user starts scrolling down closer to the image. This means that it won’t hog up bandwith when intially loading the page, making it load faster.</p>
+<p>And that’s it. That’s how easy it is to lazy load images. But if you have many images, it makes a big difference. We could not have reached a perfect score without lazy loading.</p>
+<h3 id="bonus-lazy-load-videos">Bonus: Lazy Load Videos</h3>
+<p>In the section above, about replacing GIFs with MP4s, we mentioned the one drawback of doing that: GIFs can be lazily loaded, but MP4s can’t.</p>
+<p>At least not natively.</p>
+<p>While testing things out, we developed a solution for lazy loading videos based on <a href="https://imagekit.io/blog/lazy-loading-html-videos/">this article</a>. In the end we didn’t use it, but it worked well and it’s a good technique when needed, so we’ll share it here anyway. It works by using JavaScript to dynamically replace placeholder images with video elements, as the user scrolls near them.</p>
+<p>Here is how it works:</p>
+<p>In the HTML, use a regular <code>img</code> element for the placeholder image, and tag it as a lazily loaded video with the <code>lazy-video</code> class. Define the source of the video to load in the <code>data-src</code> attribute:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span> &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">"720"</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">"720"</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">"lazy"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">"lazy-video"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"placeholder.avif"</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data-src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"video.mp4"</span>&gt;
+</span></span></code></pre></div>
+<p>Then replace these images with videos when the user scrolls near them, using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer API</a>:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">'DOMContentLoaded'</span>, <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Lazy-loads videos by replacing image placeholders with video elements
+</span></span></span><span style="display:flex;"><span>  <span style="color:#75715e">// See: https://imagekit.io/blog/lazy-loading-html-videos/
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">"IntersectionObserver"</span> <span style="color:#66d9ef">in</span> window) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">img_els</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">'.lazy-video'</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">opts</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">rootMargin</span><span style="color:#f92672">:</span> <span style="color:#e6db74">"0px"</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Trigger when target is 50% visible (change as desired)
+</span></span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">threshold</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.5</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Set up observer that will trigger the load
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">IntersectionObserver</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">entries</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">el</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">entries</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">isIntersecting</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">img_el</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">target</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Create video element
+</span></span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">video_el</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">'video'</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">controls</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">autoplay</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">muted</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">loop</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">playsInline</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img_el</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">'width'</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img_el</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">'height'</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">poster</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img_el</span>.<span style="color:#a6e22e">src</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">src_el</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">'source'</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">src_el</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img_el</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">src</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">src_el</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// When video is loaded, attach video element, remove image element
+</span></span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">onloadeddata</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">img_el</span>, <span style="color:#a6e22e">video_el</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">ev</span>) =&gt; {
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">img_el</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">video_el</span>, <span style="color:#a6e22e">img_el</span>);
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">img_el</span>.<span style="color:#a6e22e">remove</span>();
+</span></span><span style="display:flex;"><span>            };
+</span></span><span style="display:flex;"><span>          }(<span style="color:#a6e22e">img_el</span>, <span style="color:#a6e22e">video_el</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">video_el</span>.<span style="color:#a6e22e">load</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Work is done, no need to observe this any longer
+</span></span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">obs</span>.<span style="color:#a6e22e">unobserve</span>(<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">target</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }, <span style="color:#a6e22e">opts</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Initialize all observers
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">v</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">img_els</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">obs</span>.<span style="color:#a6e22e">observe</span>(<span style="color:#a6e22e">v</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div>
+<p>That’s it. You now have lazily loaded videos.</p>
+<h2 id="level-3-go-responsive">Level 3: Go Responsive</h2>
+<p>And that was the last piece for level 2. Your images are now very fast. In fact, so fast that you might reach a perfect score.</p>
+<p>But if not, or if you just want to eke out that extra bit of speed because you’re a perfectionist like us, welcome to level 3!</p>
+<h3 id="use-responsive-images-to-improve-download-time">Use Responsive Images to Improve Download Time</h3>
+<p>The first thing to do next is to use <em>responsive images</em>. This feature in HTML lets you send different image sizes depending on the screen resolution of the user’s device. In other words, you can send lower resolution images to mobile phones, and save some bandwidth.</p>
+<p>Here is an example from our website. This is the main image on the front page:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/76059421.avif"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">srcset</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/886023564.avif 600w, /r/76059421.avif 1000w"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">"(width &gt;= 500px) 82vw, 500px"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">"Hege offering Hegena flowers"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">"1000"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">"1114"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetchpriority</span><span style="color:#f92672">=</span><span style="color:#e6db74">"high"</span>&gt;
+</span></span></code></pre></div>
+<p>Using <code>sizes</code> and <code>srcset</code> lets you define multiple image sources (files). In the <code>srcset</code>, you put all the image sources. In this example, we have two images, one 600 pixels wide, and one 1000 pixels wide. In the <code>sizes</code>, you put a media query that the browser will use to determine what source to pick. In this case, we say that if the browser is wider than 500 pixels, pick the source that has a width of 82% of the window. Otherwize pick one that’s max 500 pixels wide.</p>
+<p>This can be a little tricky to get right, and we don’t have space here to go through all the details. See for example <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images">this article</a> for more on the topic. Also be aware that pixel density plays a role in what source the browser picks. So if you have a mobile phone with a high DPI screen, it might pick sources larger than you would expect.</p>
+<p>Getting this right is definitely worth the effort though. The full sized image in the example is 56 kB for the desktop version, but the reduced size for mobile is just 27 kB. Saving 29 kB might not seem that much, but on a slow mobile connection that’s around 140 milliseconds saved. Multiply that by a couple of images, and it adds up.</p>
+<figure class="image"><a href="/r/3223762562.webp"><img src="/r/3223762562.webp" width="1700" height="1114" alt="Hege offering Hegena a boquet of flowers" loading="lazy"></a>
+<figcaption>Desktop vs. mobile version of the same image: 56 kB vs 27 kB.</figcaption>
+</figure>
+<h3 id="set-fetch-priorities-to-optimize-loading-order">Set Fetch Priorities to Optimize Loading Order</h3>
+<p>In the example above, you might have noticed the <code>fetchpriority="high"</code> attribute. By setting fetch priorities, you can give a hint to the browser about what it should prioritize.</p>
+<p>Browsers are pretty good at guessing this, so it’s not always necessary. Use the devloper console to see in what order images are loaded on your page. If you need to adjust the order, set <code>fetchpriority="high"</code> on the images you want to load sooner, and <code>fetchpriority="low"</code> on the ones that can wait.</p>
+<p>Read more in <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority">the documentation</a>.</p>
+<h3 id="optimize-svgs-to-save-a-few-extra-kilobytes">Optimize SVGs to Save a Few Extra Kilobytes</h3>
+<p>Now we’re getting really down into the weeds.</p>
+<p>If you have SVG images on your site, you can optimize them. However, SVGs are usually light-weight already, so the gains to be made here are not going to be huge.</p>
+<p>If you still want to do it, first use an automatic optimizer to clean up the SVG code, and optionally reduce precision. There are various online tools for this. We used <a href="https://svgoptimizer.com/">SVG Optimizer</a> and it worked well.</p>
+<p>How much can you save here? It depends on the image. As an example, we shrank the HEGE logo from 16 kB down to 8 kB. Those 8 kB are not going to matter in most cases, but on slow mobile data it’s around 40 milliseconds saved.</p>
+<p>After this, if you really are a perfectionist and want to save a few kilobytes more, go in and hand-edit the SVG files to clean up the code. Often there are a few unnecessary attributes and styles that can be removed.</p>
+<p>Understand that this it not going to make any difference whatsoever in practice (cleaning every one of our SVGs saved about 4 kB i total). But it will give you that warm fuzzy feeling of a job well done.</p>
+<p>Example before cleanup:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;svg</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">"Layer_1"</span> <span style="color:#a6e22e">data-name=</span><span style="color:#e6db74">"Layer 1"</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">"http://www.w3.org/2000/svg"</span> <span style="color:#a6e22e">viewBox=</span><span style="color:#e6db74">"0 0 68.82 51.95"</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;defs&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;style&gt;</span>
+</span></span><span style="display:flex;"><span>      .cls-1 {
+</span></span><span style="display:flex;"><span>        fill: #1d1d1d;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/style&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/defs&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;path</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">"cls-1"</span> <span style="color:#a6e22e">d=</span><span style="color:#e6db74">"..."</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/svg&gt;</span>
+</span></span></code></pre></div>
+<p>After cleanup:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;svg</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">"http://www.w3.org/2000/svg"</span> <span style="color:#a6e22e">viewBox=</span><span style="color:#e6db74">"0 0 68.82 51.95"</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;path</span> <span style="color:#a6e22e">d=</span><span style="color:#e6db74">"..."</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/svg&gt;</span>
+</span></span></code></pre></div>
+<h3 id="svgs-can-also-be-inlined-but-its-probably-not-worth-it">SVGs Can Also Be Inlined, But It’s Probably Not Worth It</h3>
+<p>Finally, let’s just note that SVGs can be inlined straight into the HTML. This saves a whole TCP roundtrip, at the expense of larger HTML and no caching. We tried it, but in our case, it just wasn’t worth the tradeoff. It can be handy in certain situations though, so here’s how to do it if you want to give it a try.</p>
+<p>Going from an external SVG image:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">"next"</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">"16"</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">"16"</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"chevron.svg"</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">"lazy"</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span></code></pre></div>
+<p>To inlining it (note that you don’t need the <code>xmlns</code> attribute on the <code>svg</code> when inlining):</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">"next"</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">"16"</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">"16"</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">"0 0 16 16"</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">"M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">svg</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span></code></pre></div>
+<h2 id="conclusion-images-matter">Conclusion: Images Matter</h2>
+<p>And with that deep dive into SVGs, we’ve now covered everything you need to know when it comes to optimizing images for perfect performance.</p>
+<p>To recap, this is what will give you the largest gains:</p>
+<ul>
+<li>Use AVIF and MP4.</li>
+<li>Set widths and heights.</li>
+<li>Lazy load.</li>
+</ul>
+<p>That might be enough already for PageSpeed perfection. But if not, then:</p>
+<ul>
+<li>Use responsive images.</li>
+<li>Set fetch priorities.</li>
+</ul>
+<p>And finally, if you want to geek out completely (we won’t judge!):</p>
+<ul>
+<li>Optimize SVGs.</li>
+</ul>
+<h2 id="step-4-optimize-html--javascript">Step 4: Optimize HTML & JavaScript</h2>
+<p>Phew. That was a lot. Thanks for staying with us this far!</p>
+<p>You’ve now learned how to optimize both fonts and images. That’s two huge pieces that you’ve got to get right to make a website fast. But. They’re not enough.</p>
+<p>Another crucial part of the puzzle is optimizing HTML and JavaScript.</p>
+<p>But that’s for next week, when we’ll take a look at how to write lean semantic HTML, replace JavaScript with modern HTML, and dig really deep into how to optimize fingerprinting to shave that last little piece off the page weight.</p>
+<p>Until then, have a great week, and make sure to jump into our Telegram and say hi to all the Hegends in there. Good vibes guaranteed!</p>
+<p>– <em>Team Hege</em> 👊</p>
+<p>PS. Check out the piece “EARTHSHAPER” below. This LEGENDARY collectible is <a href="https://drip.haus/hegecoin/collectible/hegecoin-drip-hege-earthshaper-83e3858a">up for sale on DRiP!</a></p>
+<figure class="image"><a href="/r/1579080361.webp"><img src="/r/1579080361.webp" width="1200" height="1200" alt="Cartoon Hege clad in armor made of steel and heavy brown fabric, spinning a rock in a force field between his hands, against a backdrop of high mountains." loading="lazy"></a>
+<figcaption>HEGE: EARTHSHAPE</figcaption>
+</figure>
+</div>
+</div>
+</article>
+</section>
+<section class="blog-f blog-entry-f">
+<p><a href="/blog/">← Back to the blog homepage</a></p>
+</section>
+</main>
+<footer><a href="/"><img width="132" height="33" src="/r/2607289839.svg" alt="HEGE" loading="lazy"></a>
+<ul class="btn-list">
+<li><a href="https://twitter.com/HegeCoin" target="_blank"><img width="50" height="45" alt="X logo" src="/r/2938068187.svg" loading="lazy"></a></li>
+<li><a href="https://t.me/Hegequarters" target="_blank"><img width="512" height="431" alt="Telegram logo" src="/r/2111933442.svg" loading="lazy"></a></li>
+<li><a href="https://linktr.ee/hegefund" target="_blank"><img width="80" height="98" alt="Linktree logo" src="/r/543747669.svg" loading="lazy"></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank"><img width="252" height="300" alt="DEX Screener logo" src="/r/3205571068.svg" loading="lazy"></a></li>
+</ul>
+<p>Disclaimer: $HEGE is a memecoin with no intrinsic value. Don't risk money you are afraid of losing. The price may go up or it may go down. We are not responsible for the price of the token.</p>
+<p>Copyright Hegecoin 2026</p>
+<p>Handcrafted with ❤️</p>
+</footer>
+<dialog closedby="any" id="nav-c">
+<div><a href="/" class="logo"><img width="822" height="205" src="/r/2607289839.svg" alt="HEGE"></a>
+<div><button onclick="document.getElementById('nav-c').close()"><img src="/r/82561575.svg" width="20" height="20" alt="X"></button></div>
+</div>
+<section><a href="/nfts/" title="Learn more about our NFT collection!">
+<div class="h-a" data-frames="/r/3446319882.avif;/r/168622860.avif;/r/785041076.avif;/r/1978746780.avif;/r/3685339383.avif"><img class="show" src="/r/1959589881.avif" width="750" height="750" loading="lazy" alt="Hegend 1"></div>
+<span><strong>Hegends NFTs</strong> <em>Learn more about our NFT collection!</em></span></a>
+<ul>
+<li><a href="/about/"><img src="/r/3587084489.svg" width="300" height="237" alt="Hege" fetchpriority="low" loading="lazy"> <span><strong>About</strong> <em>Learn all about $HEGE</em></span></a></li>
+<li><a href="https://shop.hegecoin.com" target="_blank"><img src="/r/528256121.svg" width="555" height="496" alt="T-shirt" fetchpriority="low" loading="lazy"> <span><strong>Merch</strong> <em>Rock some of our exclusive merch!</em></span></a></li>
+<li><a href="/blog/"><img src="/r/2385211595.svg" width="375" height="456" alt="Newspaper article icon" fetchpriority="low" loading="lazy"> <span><strong>Blog</strong> <em>Read the latest about $HEGE</em></span></a></li>
+<li><a href="/league-of-hegends/"><img src="/r/3745193089.svg" width="30" height="30" alt="Globe icon" fetchpriority="low" loading="lazy"> <span><strong>League of Hegends</strong> <em>Meet our most valued community members</em></span></a></li>
+<li><a href="/testimonials/"><img src="/r/4054869380.svg" width="300" height="226" alt="Photograph icon" fetchpriority="low" loading="lazy"> <span><strong>Media</strong> <em>What's being said about $HEGE</em></span></a></li>
+<li><a href="/#faq" onclick="document.getElementById('nav-c').close()"><img src="/r/333550920.svg" width="30" height="30" alt="?" fetchpriority="low" loading="lazy"> <span><strong>FAQs</strong> <em>Answers to common questions</em></span></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank" class="ext"><img src="/r/610068670.svg" width="300" height="272" alt="Bar chart icon" fetchpriority="low" loading="lazy"> <span><strong>Price Chart</strong> <em>Track the $HEGE price by the second</em></span></a></li>
+<li><a href="https://drip.haus/hegecoin" target="_blank" class="ext"><img src="/r/407803855.svg" width="30" height="30" alt="Drop" fetchpriority="low" loading="lazy"> <span><strong>DRiP</strong> <em>Check out $HEGE on art platform DRiP</em></span></a></li>
+<li><a href="https://www.reddit.com/r/HegeCoin/" target="_blank" class="ext"><img src="/r/1609170980.svg" width="30" height="30" alt="Reddit logo" fetchpriority="low" loading="lazy"> <span><strong>Reddit</strong> <em>Join over 1,200 Hegends on Reddit!</em></span></a></li>
+<li><a href="https://capitoday.com/meme/hege-coin" target="_blank" class="ext"><img src="/r/298893401.svg" width="30" height="30" alt="Capitoday logo" fetchpriority="low" loading="lazy"> <span><strong>Capitoday</strong> <em>Track and vote for $HEGE on Capitoday</em></span></a></li>
+</ul>
+</section>
+</dialog>
+<template id="geoblock-msg-template">
+<div class="heavy plain box">
+<h1>Sorry!</h1>
+<p>Based on your location, you are not allowed to access the Hege website.</p>
+<p>Because of legal uncertainties, we are forced to block visitors from the following countries:</p>
+<ul>
+<li>United Kingdom</li>
+</ul>
+</div>
+</template>
+</body>
+</html>

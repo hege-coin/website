@@ -6,8 +6,15 @@
     <description>Read the latest about $HEGE here!</description>
     <generator>Hege</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hegecoin.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 3: Optimize Images</title>
+      <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/</link>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/</guid>
+      <description>With fonts down, we turn our performance hungry snouts to images, and sniff out how to use AVIF, MP4, lazy loading and more to reach the promised land of PageSpeed perfection.&#xA;</description>
+    </item>
     <item>
       <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 2: Optimize Fonts</title>
       <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/</link>
@@ -16,7 +23,7 @@
       <description>Continuing our journey to PageSpeed Paradise, this week we turn to fonts, showing how compression and heavy subsetting brought 3 MB of unoptimized font files down to a minimal 18 kB.&#xA;</description>
     </item>
     <item>
-      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score (pt. 1)</title>
+      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 1: Big Picture</title>
       <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/</guid>
