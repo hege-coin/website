@@ -72,13 +72,13 @@
 <p>This week we’re diving in to the next part of the stack: images. That’s right, images. So read on for all the details on how to use the best image formats and lazy loading to nail that perfect PageSpeed scorecard.</p>
 <h2 id="optimize-images">Optimize Images</h2>
 <p>Just like choosing optimal formats and using various forms of compression makes a huge difference when it comes to fonts, so too it does for images.</p>
-<p>The Hege website is quite heavy on graphics. The start page on mobile (which is the focus in these articles) has many images and several animations. On our old site, they came in at around 5.5 megabytes altogether. That wasn’t terrible at all, but it clearly wasn’t going to cut it for that perfect score we were gunning for.</p>
+<p>The Hege website is quite heavy on graphics. The start page on mobile (which is the focus in these articles) has many images and animations. On our old site, they came in at around 5.5 megabytes altogether. That wasn’t terrible at all, but it clearly wasn’t going to cut it for that perfect score we were gunning for.</p>
 <p>So here’s what we did to get those 5.5 megabytes down to 1.2 megabytes, and to load everything as fast as possible.</p>
 <figure class="image"><a href="/r/2679696172.webp"><img src="/r/2679696172.webp" width="1199" height="1568" alt="Collector card featuring 'Hendrock', a muscular superhero forged of earthen stone." loading="lazy"></a>
 <figcaption>HENDROCKS. Element: 🪨 Power Matrix: [Absorb][Anchor][Return]</figcaption>
 </figure>
 <h2 id="level-1-use-modern-image-formats">Level 1: Use Modern Image Formats</h2>
-<p>As always, basics first. Using the right image formats, plus setting widths and heights everywhere, that’s the low hanging fruit that gives a great return on effort.</p>
+<p>As always, basics first. Using the right image formats, plus setting widths and heights everywhere, that’s the low hanging fruit that’s going to give a great return on effort.</p>
 <h3 id="its-2026-use-avif">It’s 2026, Use AVIF!</h3>
 <p>Back in the ancient days, JPEG was what you turned to for images on the web. JPEG has been around forever (= 1992), and it’s an amazing piece of technology. The compression is good, and it’s supported everywhere.</p>
 <p>Then in 2010, Google released their own WebP format, designed to be a universal format for web graphics, covering both images and animations. It’s good, and it produces smaller files than JPEG for the same quality.</p>
@@ -87,7 +87,7 @@
 <p>AVIF is the newest kid on the image format block. Using the AV1 video compression algorithms, it produces files much smaller than both JPEG and WebP for the same quality. It’s also supported in all major web browsers. (If you really need to support old browsers, use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture">picture element</a> to define fallbacks.)</p>
 <p>How much better is AVIF?</p>
 <p>Let’s take the picture of Helena below as an example.</p>
-<p>Using <a href="https://imagemagick.org/">ImageMagick</a>’s <code>convert</code>, we can convert the original PNG 1280x1280 image to JPEG, WebP, and AVIF, for comparison.</p>
+<p>Using <a href="https://imagemagick.org/">ImageMagick</a>’s <code>convert</code>, we can convert the original PNG 1280x1280 pixel image to JPEG, WebP, and AVIF, for comparison.</p>
 <div class="highlight">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>convert helena.png helena.jpg
 </span></span><span style="display:flex;"><span>convert helena.png helena.webp
@@ -153,7 +153,7 @@
 <div class="highlight">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"hege.avif"</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">"Hege"</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">"1000"</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">"728"</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">"lazy"</span>&gt;
 </span></span></code></pre></div>
-<p>With lazy loading set, if the image is far down the page, the browser will now wait to download it until the user starts scrolling down closer to the image. This means that it won’t hog up bandwith when intially loading the page, making it load faster.</p>
+<p>With lazy loading set, if the image is far down the page, the browser will now wait to download it until the user starts scrolling down closer to the image. This means that it won’t hog up bandwidth when initially loading the page, making it load faster.</p>
 <p>And that’s it. That’s how easy it is to lazy load images. But if you have many images, it makes a big difference. We could not have reached a perfect score without lazy loading.</p>
 <h3 id="bonus-lazy-load-videos">Bonus: Lazy Load Videos</h3>
 <p>In the section above, about replacing GIFs with MP4s, we mentioned the one drawback of doing that: GIFs can be lazily loaded, but MP4s can’t.</p>
@@ -242,15 +242,15 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">"1114"</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetchpriority</span><span style="color:#f92672">=</span><span style="color:#e6db74">"high"</span>&gt;
 </span></span></code></pre></div>
-<p>Using <code>sizes</code> and <code>srcset</code> lets you define multiple image sources (files). In the <code>srcset</code>, you put all the image sources. In this example, we have two images, one 600 pixels wide, and one 1000 pixels wide. In the <code>sizes</code>, you put a media query that the browser will use to determine what source to pick. In this case, we say that if the browser is wider than 500 pixels, pick the source that has a width of 82% of the window. Otherwize pick one that’s max 500 pixels wide.</p>
+<p>Using <code>sizes</code> and <code>srcset</code> lets you define multiple image sources (files). In the <code>srcset</code>, you put all the image sources. In this example, we have two images, one 600 pixels wide, and one 1000 pixels wide. In the <code>sizes</code>, you put a media query that the browser will use to determine what source to pick. In this case, we say that if the browser is wider than 500 pixels, pick the source that has a width of 82% of the window. Otherwise pick one that’s max 500 pixels wide.</p>
 <p>This can be a little tricky to get right, and we don’t have space here to go through all the details. See for example <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images">this article</a> for more on the topic. Also be aware that pixel density plays a role in what source the browser picks. So if you have a mobile phone with a high DPI screen, it might pick sources larger than you would expect.</p>
 <p>Getting this right is definitely worth the effort though. The full sized image in the example is 56 kB for the desktop version, but the reduced size for mobile is just 27 kB. Saving 29 kB might not seem that much, but on a slow mobile connection that’s around 140 milliseconds saved. Multiply that by a couple of images, and it adds up.</p>
-<figure class="image"><a href="/r/3223762562.webp"><img src="/r/3223762562.webp" width="1700" height="1114" alt="Hege offering Hegena a boquet of flowers" loading="lazy"></a>
+<figure class="image"><a href="/r/3223762562.webp"><img src="/r/3223762562.webp" width="1700" height="1114" alt="Hege offering Hegena a bouquet of flowers" loading="lazy"></a>
 <figcaption>Desktop vs. mobile version of the same image: 56 kB vs 27 kB.</figcaption>
 </figure>
 <h3 id="set-fetch-priorities-to-optimize-loading-order">Set Fetch Priorities to Optimize Loading Order</h3>
 <p>In the example above, you might have noticed the <code>fetchpriority="high"</code> attribute. By setting fetch priorities, you can give a hint to the browser about what it should prioritize.</p>
-<p>Browsers are pretty good at guessing this, so it’s not always necessary. Use the devloper console to see in what order images are loaded on your page. If you need to adjust the order, set <code>fetchpriority="high"</code> on the images you want to load sooner, and <code>fetchpriority="low"</code> on the ones that can wait.</p>
+<p>Browsers are pretty good at guessing this, so it’s not always necessary. Use the developer console to see in what order images are loaded on your page. If you need to adjust the order, set <code>fetchpriority="high"</code> on the images you want to load sooner, and <code>fetchpriority="low"</code> on the ones that can wait.</p>
 <p>Read more in <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority">the documentation</a>.</p>
 <h3 id="optimize-svgs-to-save-a-few-extra-kilobytes">Optimize SVGs to Save a Few Extra Kilobytes</h3>
 <p>Now we’re getting really down into the weeds.</p>
@@ -296,7 +296,7 @@
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">button</span>&gt;
 </span></span></code></pre></div>
 <h2 id="conclusion-images-matter">Conclusion: Images Matter</h2>
-<p>And with that deep dive into SVGs, we’ve now covered everything you need to know when it comes to optimizing images for perfect performance.</p>
+<p>And with that deep dive into SVGs, we’ve now covered everything you need to know to optimize images for perfect performance.</p>
 <p>To recap, this is what will give you the largest gains:</p>
 <ul>
 <li>Use AVIF and MP4.</li>
@@ -312,9 +312,9 @@
 <ul>
 <li>Optimize SVGs.</li>
 </ul>
-<h2 id="step-4-optimize-html--javascript">Step 4: Optimize HTML & JavaScript</h2>
+<h2 id="next-step-optimize-html--javascript">Next Step: Optimize HTML & JavaScript</h2>
 <p>Phew. That was a lot. Thanks for staying with us this far!</p>
-<p>You’ve now learned how to optimize both fonts and images. That’s two huge pieces that you’ve got to get right to make a website fast. But. They’re not enough.</p>
+<p>You’ve now learned how to optimize both fonts and images. That’s two huge pieces that you’ve got to get right to make a website fast. But. That’s not enough.</p>
 <p>Another crucial part of the puzzle is optimizing HTML and JavaScript.</p>
 <p>But that’s for next week, when we’ll take a look at how to write lean semantic HTML, replace JavaScript with modern HTML, and dig really deep into how to optimize fingerprinting to shave that last little piece off the page weight.</p>
 <p>Until then, have a great week, and make sure to jump into our Telegram and say hi to all the Hegends in there. Good vibes guaranteed!</p>
