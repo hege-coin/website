@@ -70,16 +70,16 @@
 <p>Last week here on the blog, we told you about our very own Head Speedmaster Monkey and how he pulled off the perfect score on the PageSpeed Insights test. It was quite the story actually, so make sure to go <a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">read it</a> if you haven’t already.</p>
 <p>If you did read it, and if your memory is good, you will remember that we covered step 1 of the process, which was to serve static HTML over a fast Content Delivery Network, then fingerprint assets, and finally say no to cookies.</p>
 <p>This week we’re picking up right where we left off, and we’ll dive deep into the next step of the process: optimizing fonts.</p>
-<figure class="image"><a href="/r/874607312.webp"><img src="/r/874607312.webp" width="1200" height="1671" alt="Trading card featuring REYNATALES: an anthropomorphic red-haired fox in a deep purple bodysuit, against a backdrop of pink and orange lighting bolts." loading="lazy"></a>
-<figcaption>REYNATALES. Power Matrix: [Displace] [Accelerate] [Control]</figcaption>
-</figure>
-<h2 id="step-2-optimize-fonts">Step 2: Optimize Fonts</h2>
+<h2 id="you-have-to-optimize-fonts-for-maximum-performance">You Have to Optimize Fonts For Maximum Performance</h2>
 <p>Yes, fonts.</p>
 <p>Why?</p>
 <p>Because unoptimized fonts can <em>completely</em> ruin website performance.</p>
 <p>As an illustration of how bad it can get, consider this. When building our old site, our previous webmonkey used an uncompressed TTF version of our headline font. This TTF weighed in at 2.5 megabytes. Yes, that’s 2.5 <em>megabytes</em> of font data that the browser had to download before the page could be fully rendered. On a slow mobile connection, that’s over 12 seconds!</p>
 <p>If you use custom fonts on your website, optimizing them properly can be the biggest speed unlock you can make.</p>
 <p>Alright alright. You get it. Let’s dive in to some details.</p>
+<figure class="image"><a href="/r/874607312.webp"><img src="/r/874607312.webp" width="1200" height="1671" alt="Trading card featuring REYNATALES: an anthropomorphic red-haired fox in a deep purple bodysuit, against a backdrop of pink and orange lighting bolts." loading="lazy"></a>
+<figcaption>REYNATALES. Power Matrix: [Displace] [Accelerate] [Control]</figcaption>
+</figure>
 <h2 id="level-1-self-host-subset-and-use-woff2">Level 1: Self-Host, Subset, and Use WOFF2</h2>
 <p>Basics first. The entry level is to self-host your fonts, and make them lean.</p>
 <h3 id="self-host-fonts-to-avoid-overhead">Self-Host Fonts to Avoid Overhead</h3>
@@ -222,7 +222,7 @@
 <li>This brought the font download time down from an absurd 14 seconds, to a neat 88 milliseconds, which got us close to the perfect performance score.</li>
 <li>Finally, inlining sealed the deal, locking in that sweet 100.</li>
 </ul>
-<h2 id="step-3-optimize-images">Step 3: Optimize Images</h2>
+<h2 id="next-step-optimize-images">Next Step: Optimize Images</h2>
 <p>Of course, optimizing fonts wasn’t the only thing we had to do to reach PageSpeed Nirvana.</p>
 <p>Getting our image game up to speed also played a large part.</p>
 <p>But that’s for next week, when we’ll take a closer look at how to use modern image formats, combined with lazy loading and responsive image declarations.</p>
