@@ -87,9 +87,10 @@
 </ul>
 <p>These features were just not available anywhere. So it was either we settle for mediocre, or we build our own bot. Obviously, we weren’t going to settle for mediocre, so rolling up our sleeves and getting to work was the only option.</p>
 <h2 id="the-solution-hege-buybot">The Solution: HEGE BuyBot</h2>
-<p>Initially we used Solscan as a source for buy data, but we have now switched to Helius Webhooks.</p>
-<p>Helius has a generous free tier, and their webhook service was easy to hook up to our bot. The setup is simple: a bare-bones Python WSGI app served by Gunicorn is listening for SWAP webhook events from Helius. Whenever one comes in, the incoming data is parsed, a suitable message is selected, and the message is then sent to our Telegram.</p>
-<p>The beauty of this setup is that the message selection is fully programmable. We can now use whatever emojis we want, set up completely custom messages for different dollar value ranges, and even add special “easter eggs” messages for specific buy values (like the one below).</p>
+<p>HEGE BuyBot is a lean Python-based bot built from scratch.</p>
+<p>The setup is simple: a bare-bones Python WSGI app served by Gunicorn is listening for SWAP webhook events from Helius. Whenever one comes in, the incoming data is parsed, a suitable message is selected, and the message is then sent to our Telegram.</p>
+<p>Initially we used Solscan as a source for buy data, but we have now switched to Helius Webhooks. Helius has a generous free tier, and their webhook service was easy to hook up to our bot.</p>
+<p>The beauty of the design is that the message selection is fully programmable. We can now use whatever emojis we want, set up completely custom messages for different dollar value ranges, and even add special “easter eggs” messages for specific buy values (like the one below).</p>
 <p>This might not seem like a big deal. But seeing these custom messages instead of the generic ones used everywhere else, it does make the chat feel special.</p>
 <figure class="image"><a href="/r/3064937605.webp"><img src="/r/3064937605.webp" width="1032" height="1416" alt="" loading="lazy"></a>
 <figcaption>Elite entry. Bears will Crash & Burn.</figcaption>
