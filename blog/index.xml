@@ -6,8 +6,15 @@
     <description>Read the latest about $HEGE here!</description>
     <generator>Hege</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hegecoin.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 4: Optimize HTML and JavaScript</title>
+      <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-4/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-4/</guid>
+      <description>In this next installment on the path to the promised land of lightning-fast websites, it&amp;rsquo;s time to get HTML and JavaScript bloat out of our way to PageSpeed bliss.&#xA;</description>
+    </item>
     <item>
       <title>HEGE BuyBot, Reporting for Duty</title>
       <link>https://hegecoin.com/blog/hege-buybot-reporting-for-duty/</link>
