@@ -130,7 +130,7 @@
 <p>The table above shows the sizes of HTML plus render-blocking (synchronous) JavaScript (with standard gzip compression). This is data that the browser has to download before it can even start rendering anything on the screen. So cutting this down as much as possible is extremely important for high-performance.</p>
 <p>On a slow mobile connection (1,638.4 kb/s), downloading the 114.9 kB of the old site takes around 560 milliseconds (ms). And that’s even before considering the extra 150 ms or so of TCP roundtripping needed to load the external JavaScript files. In comparison, the 8.5 kB of the new site can be downloaded in only 42 ms, with zero overhead from extra roundtrips.</p>
 <p>That’s a <em>huge</em> improvement.</p>
-<p>Let’s line out how we did it.</p>
+<p>Let’s see how we did it.</p>
 <h2 id="level-1-no-frameworks-please">Level 1: No Frameworks, Please</h2>
 <p>This initial level is where most of the gains will be done.</p>
 <h3 id="write-lean-semantic-html">Write Lean Semantic HTML</h3>
@@ -144,7 +144,7 @@
 <p>(As an additional benefit, it will also give you perfect PageSpeed accessibility and SEO scores.)</p>
 <h3 id="dont-build-a-single-page-application">Don’t Build a Single-Page Application</h3>
 <p>For a normal website, you don’t need React. You don’t need Svelte. You don’t need Next.js. Forget about those, and forget about all other kinds of frameworks or libraries.</p>
-<p>There is no reason to build your simple website as a single-page application. What you possibly win in subsequent page loading time, you lose on the initial load time (and on increased complexity). Just write custom HTML, and then sprinkle some JavaScript on top for addditional functionality. If you optimize everything correctly, your site will be so fast it <em>feels</em> like a single page app anyway (thank you <a href="https://developer.chrome.com/blog/paint-holding">paint holding</a>).</p>
+<p>There is no reason to build your simple website as a single-page application. What you possibly win in subsequent page loading time, you lose on the initial load time (and on increased complexity). Just write custom HTML, and then sprinkle some JavaScript on top for additional functionality. If you optimize everything correctly, your site will be so fast it <em>feels</em> like a single page app anyway (thank you <a href="https://developer.chrome.com/blog/paint-holding">paint holding</a>).</p>
 <p>Don’t get caught in the let’s-use-a-framework-for-everything mentality. It will not serve you in the long run. Instead, learn the fundamentals and write lean semantic HTML, using JavaScript only when necessary.</p>
 <h3 id="avoid-all-render-blocking-javascript">Avoid All Render-Blocking JavaScript</h3>
 <p>As it turns out, avoiding frameworks and using modern HTML features, you need surprisingly little JavaScript. In our case, no more than 2.4 kB.</p>
@@ -241,7 +241,7 @@
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"apple-touch-icon"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"{{ .RelPermalink }}"</span>&gt;
 </span></span><span style="display:flex;"><span>{{ end }}
 </span></span></code></pre></div>
-<p>This automatically fingerprints the assest and produces this HTML:</p>
+<p>This automatically fingerprints the asset and produces this HTML:</p>
 <div class="highlight">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"apple-touch-icon"</span>
