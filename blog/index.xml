@@ -6,8 +6,15 @@
     <description>Read the latest about $HEGE here!</description>
     <generator>Hege</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hegecoin.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 5: Optimize CSS</title>
+      <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/</guid>
+      <description>Welcome to the last piece of the performance puzzle, where we take a close look at how to optimize CSS like nobody&amp;rsquo;s business.&#xA;</description>
+    </item>
     <item>
       <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 4: Optimize HTML and JavaScript</title>
       <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-4/</link>

@@ -10,7 +10,7 @@
 <link rel="preload" href="/r/915512105.woff2" as="font" type="font/woff2" crossorigin="">
 <link rel="preload" href="/r/3997950749.woff2" as="font" type="font/woff2" crossorigin="">
 <link rel="preload" href="/r/636367663.woff2" as="font" type="font/woff2" crossorigin="">
-<link rel="stylesheet" href="/r/1566372161.min.css">
+<link rel="stylesheet" href="/r/76178289.min.css">
 <meta name="author" content="Hege">
 <meta name="description" content="Continuing our journey to PageSpeed Paradise, this week we turn to fonts, showing how compression and heavy subsetting brought 3 MB of unoptimized font files down to a minimal 18 kB.">
 <meta property="og:type" content="website">
@@ -80,7 +80,7 @@
 <figure class="image"><a href="/r/874607312.webp"><img src="/r/874607312.webp" width="1200" height="1671" alt="Trading card featuring REYNATALES: an anthropomorphic red-haired fox in a deep purple bodysuit, against a backdrop of pink and orange lighting bolts." loading="lazy"></a>
 <figcaption>REYNATALES. Power Matrix: [Displace] [Accelerate] [Control]</figcaption>
 </figure>
-<h2 id="level-1-self-host-subset-and-use-woff2">Level 1: Self-Host, Subset, and Use WOFF2</h2>
+<h2 id="level-1">Level 1: Self-Host, Subset, Use WOFF2</h2>
 <p>Basics first. The entry level is to self-host your fonts, and make them lean.</p>
 <h3 id="self-host-fonts-to-avoid-overhead">Self-Host Fonts to Avoid Overhead</h3>
 <p>We use two fonts on the Hege website: <a href="https://fonts.google.com/specimen/Dela+Gothic+One">Dela Gothic One</a>, and <a href="https://fonts.google.com/specimen/IBM+Plex+Mono">IBM Plex Mono</a>. Both are available for free on Google Fonts.</p>
@@ -108,7 +108,7 @@
 <p>Not bad. Not bad at all. And almost enough to ace the performance score.</p>
 <p>But not quite.</p>
 <p>So let’s take it to the next level.</p>
-<h2 id="level-2-preload">Level 2: Preload</h2>
+<h2 id="level-2">Level 2: Preload Font Files</h2>
 <p>With the basics in place, let’s see how to get the fonts to start downloading sooner, so that the page can render faster.</p>
 <h3 id="preload-font-files-to-avoid-delay">Preload Font Files to Avoid Delay</h3>
 <p>Because the browser needs the font files to render the page properly, you need to make sure it starts downloading the fonts as early as possible.</p>
@@ -145,7 +145,7 @@
 <p>But. We didn’t stop here.</p>
 <p>Because for our front page, we wanted to go all in and push it to eleven.</p>
 <p>Enter: Level 3.</p>
-<h2 id="level-3-subsetmaxx-and-inline">Level 3: Subsetmaxx and Inline</h2>
+<h2 id="level-3">Level 3: Subsetmaxx, Inline</h2>
 <p>So how do we take it to eleven? We subset harder, and we inline.</p>
 <h3 id="subset-harder-to-make-fonts-even-leaner">Subset Harder to Make Fonts Even Leaner</h3>
 <p>Remember how we subset our fonts and got them down to a neat 104 kB in total? That’s perfectly fine for most pages. But for the front page where we want maximum performance, we can do even better.</p>
@@ -237,7 +237,8 @@
 </article>
 </section>
 <section class="blog-f blog-entry-f">
-<p><a href="/blog/">← Back to the blog homepage</a></p>
+<p><em>This article was 100% written by human with 💛.</em></p>
+<p class="backlink"><a href="/blog/">← Back to the blog homepage</a></p>
 </section>
 </main>
 <footer><a href="/"><img width="132" height="33" src="/r/2607289839.svg" alt="HEGE" loading="lazy"></a>

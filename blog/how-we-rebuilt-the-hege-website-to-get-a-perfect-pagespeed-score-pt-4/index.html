@@ -10,7 +10,7 @@
 <link rel="preload" href="/r/915512105.woff2" as="font" type="font/woff2" crossorigin="">
 <link rel="preload" href="/r/3997950749.woff2" as="font" type="font/woff2" crossorigin="">
 <link rel="preload" href="/r/636367663.woff2" as="font" type="font/woff2" crossorigin="">
-<link rel="stylesheet" href="/r/1566372161.min.css">
+<link rel="stylesheet" href="/r/76178289.min.css">
 <meta name="author" content="Hege">
 <meta name="description" content="In this next installment on the path to the promised land of lightning-fast websites, it’s time to get HTML and JavaScript bloat out of our way to PageSpeed bliss.">
 <meta property="og:type" content="website">
@@ -112,13 +112,13 @@
 <td>HTML + inline JS</td>
 <td>19.3 kB</td>
 <td>8.5 kB</td>
-<td>2.3x</td>
+<td></td>
 </tr>
 <tr>
 <td>External JS (sync)</td>
 <td>95.6 kB</td>
 <td>0</td>
-<td>-</td>
+<td></td>
 </tr>
 <tr style="font-weight: bold">
 <td>Total HTML + JS</td>
@@ -131,7 +131,7 @@
 <p>On a slow mobile connection (1,638.4 kb/s), downloading the 114.9 kB of the old site takes around 560 milliseconds (ms). And that’s even before considering the extra 150 ms or so of TCP roundtripping needed to load the external JavaScript files. In comparison, the 8.5 kB of the new site can be downloaded in only 42 ms, with zero overhead from extra roundtrips.</p>
 <p>That’s a <em>huge</em> improvement.</p>
 <p>Let’s see how we did it.</p>
-<h2 id="level-1-no-frameworks-please">Level 1: No Frameworks, Please</h2>
+<h2 id="level-1">Level 1: No Frameworks, No Render-Blocking JavaScript</h2>
 <p>This initial level is where most of the gains will be done.</p>
 <h3 id="write-lean-semantic-html">Write Lean Semantic HTML</h3>
 <p>First off, write structurally sound HTML.</p>
@@ -157,7 +157,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetchpriority</span><span style="color:#f92672">=</span><span style="color:#e6db74">"low"</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span></code></pre></div>
-<h2 id="level-2-use-native-html-features">Level 2: Use Native HTML Features</h2>
+<h2 id="level-2">Level 2: Use Native HTML Features</h2>
 <p>In the past, if you wanted more sophisticated interactive elements like dialogs, popovers, and swiping, you had to resort to JavaScript.</p>
 <p>As of 2026, that is no longer true.</p>
 <h3 id="use-html-dialogs">Use HTML Dialogs</h3>
@@ -202,7 +202,7 @@
 <figure class="image"><a href="/r/2287421018.webp"><img src="/r/2287421018.webp" width="1850" height="984" alt="A carousel on Hegecoin.com showing part of the Hege backstory: To Hege's dismay, Hegena already has a boyfriend." loading="lazy"></a>
 <figcaption>Carousel on Hegecoin.com.</figcaption>
 </figure>
-<h2 id="level-3-minify-and-shorten-fingerprints">Level 3: Minify and Shorten Fingerprints</h2>
+<h2 id="level-3">Level 3: Minify, Shorten Fingerprints</h2>
 <p>With the native HTML features covered, we’re now entering the realm of micro-optimizations, where the fun starts!</p>
 <h3 id="minify-javascript">Minify JavaScript</h3>
 <p>First off, minify all JavaScript.</p>
@@ -304,13 +304,13 @@
 <figure class="image"><a href="/r/2255583195.webp"><img src="/r/2255583195.webp" width="1200" height="1200" alt="A shaded Hege with dark face and blue neon glowing eyes set against a dark starry background. Right hand in his pocket, left hand held up, with a small glowing globe floating above it." loading="lazy"></a>
 <figcaption>The Blue Aether guardian protects our reality by channeling universal flow and wisdom.</figcaption>
 </figure>
-<p style="text-align: center"><em>This article was 100% crafted by human with</em> 💛.</p>
 </div>
 </div>
 </article>
 </section>
 <section class="blog-f blog-entry-f">
-<p><a href="/blog/">← Back to the blog homepage</a></p>
+<p><em>This article was 100% written by human with 💛.</em></p>
+<p class="backlink"><a href="/blog/">← Back to the blog homepage</a></p>
 </section>
 </main>
 <footer><a href="/"><img width="132" height="33" src="/r/2607289839.svg" alt="HEGE" loading="lazy"></a>
