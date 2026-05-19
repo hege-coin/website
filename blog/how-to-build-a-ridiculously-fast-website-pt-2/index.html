@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>How To Build a Ridiculously Fast Website — Part 2: Optimize Fonts | Hege</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-2/">
+<link rel="preload" href="/r/2812802085.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/600843795.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/915512105.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/3997950749.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/636367663.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/r/1014975537.min.css">
+<meta name="author" content="Hege">
+<meta name="description" content="Continuing our journey to PageSpeed Paradise, this week we turn to fonts, showing how compression and heavy subsetting brought 3 MB of unoptimized font files down to a minimal 18 kB.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hegecoin.com/r/4175370056.jpg">
+<link rel="alternate" type="application/atom+xml" href="https://hegecoin.com/blog/index.xml" title="Hegecoin">
+<link rel="sitemap" type="application/xml" href="https://hegecoin.com/sitemap.xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/r/2297846202.png">
+<link rel="apple-touch-icon" href="/r/3923634518.png">
+<script type="text/javascript" src="/r/70001869.min.js" async fetchpriority="low"></script>
+</head>
+<body id="b" class="">
+<header id="h">
+<nav class="full"><a href="/" class="logo"><img width="822" height="205" src="/r/2607289839.svg" alt="HEGE" fetchpriority="high"></a>
+<ul>
+<li><a href="/about/" title="Read all about Hege">About</a></li>
+<li><a href="/blog/" title="Read the latest about Hege">Blog</a></li>
+<li><a href="/nfts/" title="Visit Hege's official NFT collection">NFTs</a></li>
+<li><span onclick="document.getElementById('nav-more').classList.toggle('open'); rha()">More <svg width="14" height="7" viewbox="0 0 14 7" fill="none">
+<path d="M13 1L7 5L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+<div id="nav-more">
+<ul id="nav-items">
+<li class="hegends-item"><a href="/nfts/" title="Visit Hege's official NFT collection">
+<div class="h-a" data-frames="/r/3446319882.avif;/r/168622860.avif;/r/785041076.avif;/r/1978746780.avif;/r/3685339383.avif"><img class="show" src="/r/1959589881.avif" width="750" height="750" loading="lazy" alt="Hegend 1"></div>
+<span><strong>Hegends NFTs</strong> <em>Learn more about our NFT collection!</em></span></a></li>
+<li><a href="/league-of-hegends/"><img src="/r/3745193089.svg" width="30" height="30" alt="A globe" fetchpriority="low" loading="lazy"> <span><strong>League of Hegends</strong> <em>Meet our most valued community members</em></span></a></li>
+<li><a href="https://t.me/Hegequarters" target="_blank" class="ext"><img src="/r/2111933442.svg" width="512" height="431" alt="Telegram logo" fetchpriority="low" loading="lazy"> <span><strong>Telegram</strong> <em>Join the fun in our Hegequarters</em></span></a></li>
+<li><a href="/testimonials"><img src="/r/4054869380.svg" width="300" height="226" alt="Photograph icon" fetchpriority="low" loading="lazy"> <span><strong>Media</strong> <em>What's being said about $HEGE</em></span></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank" class="ext"><img src="/r/610068670.svg" width="300" height="272" alt="A bar chart icon" fetchpriority="low" loading="lazy"> <span><strong>Price Chart</strong> <em>Track the $HEGE price by the second</em></span></a></li>
+<li><a href="/#faq" onclick="document.getElementById('nav-more').classList.remove('open')"><img src="/r/333550920.svg" width="30" height="30" alt="?" fetchpriority="low" loading="lazy"> <span><strong>FAQs</strong> <em>Answers to frequently asked questions</em></span></a></li>
+<li><a href="https://www.reddit.com/r/HegeCoin/" target="_blank" class="ext"><img src="/r/1609170980.svg" width="30" height="30" alt="Reddit logo" fetchpriority="low" loading="lazy"> <span><strong>Reddit</strong> <em>Join over 1,200 Hegends on Reddit!</em></span></a></li>
+<li><a href="https://drip.haus/hegecoin" target="_blank" class="ext"><img src="/r/407803855.svg" width="30" height="30" alt="A drop" fetchpriority="low" loading="lazy"> <span><strong>DRiP</strong> <em>Check out $HEGE on art platform DRiP</em></span></a></li>
+<li><a href="https://capitoday.com/meme/hege-coin" target="_blank" class="ext"><img src="/r/298893401.svg" width="30" height="30" alt="Capitoday logo" fetchpriority="low" loading="lazy"> <span><strong>Capitoday</strong> <em>Track and vote for $HEGE on Capitoday</em></span></a></li>
+</ul>
+</div>
+</li>
+<li><a href="/#buy" class="yellow btn">Buy $HEGE</a></li>
+</ul>
+<p><button aria-label="Toggle mobile menu" onclick="document.getElementById('nav-c').showModal(); rha()"><img src="/r/2068178453.svg" width="20" height="20" alt="Open menu"></button></p>
+</nav>
+</header>
+<main id="main">
+<section id="blog-entry">
+<article class="blog-article">
+<div class="h">
+<h1>How To Build a Ridiculously Fast Website — Part 2: Optimize Fonts</h1>
+<p>Continuing our journey to PageSpeed Paradise, this week we turn to fonts, showing how compression and heavy subsetting brought 3 MB of unoptimized font files down to a minimal 18 kB.</p>
+</div>
+<div class="byline-w">
+<div class="byline">
+<p><em>by</em> <span>Day</span></p>
+<p><span>Tech</span> <span>/</span> <time datetime="2026-03-15T00:00:00Z">March 15, 2026</time></p>
+</div>
+</div>
+<div class="c-w">
+<div class="c">
+<h2 id="the-quest-for-the-fastest-memecoin-website-continues">The Quest for the Fastest Memecoin Website Continues</h2>
+<p>Welcome to part 2 in our series on how to build a ridiculously fast website.</p>
+<p>This part will be all about fonts. We’ll cover all the tricks we pulled to bring an initial 3 megabytes of font data down to a mere 18 <em>kilobytes</em> — so little that we could inline it all straight into the HTML.</p>
+<p>Here are all the articles in the series, for your convenience:</p>
+<ul>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score/">Part 0: Introduction</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">Part 1: Big Picture</a></strong></li>
+<li><strong>Part 2: Optimize Fonts (this article)</strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/">Part 3: Optimize Images</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-4/">Part 4: Optimize HTML and JavaScript</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/">Part 5: Optimize CSS</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-6/">Part 6: Final Results</a></strong></li>
+</ul>
+<p>With that said, let’s dive in!</p>
+<figure class="image"><a href="/r/1345980588.webp"><img src="/r/1345980588.webp" width="2048" height="2048" alt="Breakdancer Hege, dressed in a red sweatshirt, standing on his right arm, the left raised flashing the V sign." loading="lazy"></a></figure>
+<h2 id="you-have-to-optimize-fonts-for-maximum-performance">You Have to Optimize Fonts For Maximum Performance</h2>
+<p>Yes, fonts.</p>
+<p>Why?</p>
+<p>Because unoptimized fonts can <em>completely</em> ruin website speed.</p>
+<p>As an illustration of how bad it can get, consider this. When building our old site, our previous webmonkey used an uncompressed TTF version of our headline font. This TTF weighed in at 2.5 megabytes. Yes, that’s 2.5 <em>megabytes</em> of font data that the browser had to download before the page could be fully rendered. On a slow mobile connection, that’s over 12 seconds!</p>
+<p>If you use custom fonts on your website, optimizing them properly can be the biggest speed unlock you can make.</p>
+<p>Let’s see how it’s done.</p>
+<h2 id="level-1">Level 1: Self-Host, Subset, Use WOFF2</h2>
+<p>Basics first. The entry level is to self-host your fonts, and make them lean.</p>
+<h3 id="self-host-fonts-to-avoid-overhead">Self-Host Fonts to Avoid Overhead</h3>
+<p>We use two fonts on the Hege website: <a href="https://fonts.google.com/specimen/Dela+Gothic+One">Dela Gothic One</a>, and <a href="https://fonts.google.com/specimen/IBM+Plex+Mono">IBM Plex Mono</a>. Both are available for free on Google Fonts.</p>
+<p>When using a custom font from Google Fonts, you have two options:</p>
+<ol>
+<li><strong>Embed it from Google.</strong></li>
+<li><strong>Download the font and host it yourself.</strong></li>
+</ol>
+<p>Embedding the font can actually be a decent alternative, but if you want maximum speed, it’s not an option. To ensure fast and smooth rendering, you have to make fonts available to the browser as early as possible. Embedding the font from Google means that the browser has to set up a brand new TCP connection just to download the font. That causes too much overhead, so it’s a no go. (Also, if you use Google, you’ll leak your visitors’ IP addresses to them. Not nice.)</p>
+<p>For maximum speed and control, self-hosting is the way.</p>
+<h3 id="woff2-compression-helps-but-its-not-enough">WOFF2 Compression Helps, But it’s Not Enough</h3>
+<p>Unfortunately, self-hosting is not always straight-forward.</p>
+<p>Because downloading our Dela Gothic One from Google Fonts, we get a TTF file that’s 2.5 MB large. Even compressing this with the newest WOFF2 format leaves it at 1.2 MB. The Lighthouse mobile simulator in PageSpeed uses a 1.6384 MBps connection, meaning a maximum download speed of 204.8 kB per second. So just downloading this one font would take 5.9 seconds, completely crushing any hopes of a perfect score.</p>
+<figure class="image"><a href="/r/242504955.webp"><img src="/r/242504955.webp" width="1369" height="477" alt="Dela Gothic One, a heavy sans-serif typeface." loading="lazy"></a>
+<figcaption>Dela Gothic One TTF. 2.5 megabytes. Oof.</figcaption>
+</figure>
+<p>Can we solve this?</p>
+<p>Fortunately. Yes, we can.</p>
+<h3 id="font-subsetting-to-the-rescue">Font Subsetting to the Rescue</h3>
+<p>You see, that Dela Gothic file is so large because it supports many different languages: it’s got Japanese Hiragana and Katagana characters in there, as well as both Cyrillic and Greek. But our website is English only. Which means that we can safely drop all of those characters that we’re never going to use. Nobody will ever notice.</p>
+<p>Selecting what characters to include like this is called font <em>subsetting</em>, and it can dramatically lower the size of your font file.</p>
+<p>Using a tool like FontSquirrel’s <a href="https://www.fontsquirrel.com/tools/webfont-generator">WebFont Generator</a>, you can easily subset any font and convert it to the WOFF2 format. In our case, subsetting to basic Latin brought Dela Gothic One down from 1.2 MB to around 20 kB. Yes, you read that right: from 1.2 MB to 20 kB. That’s a 60x improvement.</p>
+<p>After subsetting Dela Gothic One, we repeated the same procedure for the four varieties of IBM Plex Mono that we also use on our site.</p>
+<p>The result? From an initial total 3 MB for all five fonts, down to a lean 104 kB in total.</p>
+<p>Not bad. Not bad at all. And almost enough to ace the performance score.</p>
+<p>But not quite.</p>
+<p>So let’s take it to the next level.</p>
+<h2 id="level-2">Level 2: Preload Font Files</h2>
+<p>With the basics in place, let’s see how to get the fonts to start downloading sooner, so that the page can render faster.</p>
+<h3 id="preload-font-files-to-avoid-delay">Preload Font Files to Avoid Delay</h3>
+<p>Because the browser needs the font files to render the page properly, you need to make sure it starts downloading the fonts as early as possible.</p>
+<p>In our case, we put our CSS in an external file, and load it like this:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"stylesheet"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"style.min.css"</span>&gt;
+</span></span></code></pre></div>
+<p>And then in this CSS file we have something like this to set up the font:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#f92672">DGO</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">"dgo.woff2"</span><span style="color:#f92672">)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">"woff2"</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-weight</span><span style="color:#f92672">:</span> <span style="color:#f92672">400</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-style</span><span style="color:#f92672">:</span> <span style="color:#f92672">normal</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">font-display</span><span style="color:#f92672">:</span> <span style="color:#f92672">block</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+<p>This is standard procedure. Nothing wrong about it. But, leaving it at this is not optimal.</p>
+<p>Why?</p>
+<p>Because set up like this, the browser has to first download the CSS file, and only <em>after</em> it has the CSS file, it will then know what fonts to download. In other words, this adds a whole TCP roundtrip delay before fonts can even start downloading. Not good.</p>
+<p>Wouldn’t it be great if you could tell the browser what fonts to download straight up, before it has loaded the CSS?</p>
+<p>Yes, it would. And you can do exactly that using a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/preload">preload</a> link.</p>
+<p>If you open up the source code on the Hege website you’ll see something like this in the <code>head</code> of the HTML, before the CSS is loaded:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/2812802085.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/600843795.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/915512105.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/3997950749.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"preload"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/636367663.woff2"</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font"</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"font/woff2"</span> <span style="color:#a6e22e">crossorigin</span>&gt;
+</span></span></code></pre></div>
+<p>This tells the browser exactly what fonts files will be needed. It can then go ahead and download them straight away, before the CSS has loaded. The delay from the extra roundtrip disappears, and the page loads a little bit faster. (Note: you need the <code>crossorigin</code> attribute even if you load the fonts from the same domain!)</p>
+<h3 id="at-this-point-fonts-are-blazing-already">At This Point, Fonts are Blazing Already</h3>
+<p>What we’ve shown so far with basic subsetting and preloading is simple, and it’s good enough to make your page really really fast. In fact, this is all we did for most of our pages. And if you stop here, that’s fine.</p>
+<p>But. We didn’t stop here.</p>
+<p>Because for our front page, we wanted to go all in and push it to eleven.</p>
+<p>Enter: Level 3.</p>
+<h2 id="level-3">Level 3: Subsetmaxx, Inline</h2>
+<p>So how do we take it to eleven? We subset harder, and we inline.</p>
+<h3 id="subset-harder-to-make-fonts-even-leaner">Subset Harder to Make Fonts Even Leaner</h3>
+<p>Remember how we subset our fonts and got them down to a neat 104 kB in total? That’s perfectly fine for most pages. But for the front page where we want maximum performance, we can do even better.</p>
+<p>How?</p>
+<p>Using the <a href="https://github.com/fonttools/fonttools">fonttools</a> Python library, we created custom subsets that included <em>exactly</em> the characters we needed. No more, no less.</p>
+<p>The fonttools library includes <code>pyftsubset</code>, a handly command line tool to subset fonts with maximum control. This is the incantation we used to subset Dela Gothic One, our headline font:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pyftsubset <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   DelaGothicOne-Regular.ttf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   --output-file<span style="color:#f92672">=</span>dgo-lean.woff2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   --text-file<span style="color:#f92672">=</span><span style="color:#e6db74">"chars.txt"</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   --flavor<span style="color:#f92672">=</span>woff2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   --layout-features<span style="color:#f92672">=</span>kern
+</span></span></code></pre></div>
+<p>In the <code>chars.txt</code> file, we can specify the exact characters to include. After analyzing our front page, we realized that we actually didn’t need any other characters for this font than these few:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+</span></span><span style="display:flex;"><span> 0123456789:$/-!.+()'
+</span></span></code></pre></div>
+<p>We then repeated this for our other font files. Doing so we also discovered that we could completely remove the italic versions, because we actually didn’t use them on the front page.</p>
+<p>The end result?</p>
+<p>3 font files, 18 kB.</p>
+<p>Yes, that’s from 3 megabytes unoptimized, down to 18 kilobytes optimized. Or in other words going from 14 seconds of font downloading on PageSpeed mobile, down to 88 milliseconds.</p>
+<p>Now we’re talking.</p>
+<p>And actually, this was enough to nail that perfect scorecard we wanted.</p>
+<p>But it wasn’t doing so reliably.</p>
+<p>Something was missing.</p>
+<h3 id="the-speed-index">The Speed Index</h3>
+<p>Looking at the test scores, we saw that the “Speed Index” part of the score was surprisingly big. It would consistently come in much higher than we expected it to.</p>
+<figure class="image"><a href="/r/1093029493.webp"><img src="/r/1093029493.webp" width="1000" height="512" alt="Speed Index: 3.7s" loading="lazy"></a>
+<figcaption>Not perfect.</figcaption>
+</figure>
+<h3 id="font-loading-was-the-culprit">Font Loading Was the Culprit</h3>
+<p>Reading up on this <a href="https://docs.webpagetest.org/metrics/speedindex/">Speed Index</a>, we learned that it measures the visual progress of the page loading — the sooner things are painted on the screen, the better the score gets.</p>
+<p>After much poking around, we realized that the one thing keeping this number too high was delayed font loading.</p>
+<p>You see, to maximize performance, we had also inlined all of our CSS (more about that in part 5). This meant that as soon as the browser had downloaded the HTML, it would start rendering the page right away. But because the fonts were not inlined, the browser did not have them available at this time. This caused a delay where the page would start to render, but then it would take some time until the fonts had been downloaded and could be displayed. This delay was what hurt the score.</p>
+<p>To improve the speed index, we needed to make our fonts render sooner.</p>
+<p>How?</p>
+<p>By inlining them, too.</p>
+<h3 id="yes-fonts-can-also-be-inlined">Yes, Fonts Can Also Be Inlined</h3>
+<p>As it turns out, in CSS <em>any</em> external file that is referenced using the <code>url()</code> function can actually be inlined. This is not widely used, but it’s right there in the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/url_function">documentation</a>.</p>
+<p>How to do it?</p>
+<p>It’s simple: you base64-encode the file and then use the “data:” protocol to include it. For a font file in the WOFF2 format, this is how it looks:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">"data:application/x-font-woff2;base64,..."</span><span style="color:#f92672">)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">"woff2"</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div>
+<p>Knowing this, we took our original font files, base64-encoded them, and inlined them straight into the HTML.</p>
+<p>First we base64-encoded:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>base64 -i dgo-lean.woff2 -o dgo-lean.woff2.base64
+</span></span></code></pre></div>
+<p>Then we changed our <code>@font-face</code> definitions to reference the base64-encoded data instead of the external font files, like so:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">font-face</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#f92672">DGO</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">src</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">data</span>:<span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#f92672">x-font-woff2</span><span style="color:#f92672">;</span><span style="color:#f92672">base64</span><span style="color:#f92672">,</span><span style="color:#f92672">d09GMgAB</span><span style="color:#f92672">...)</span> <span style="color:#f92672">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">"woff2"</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-weight</span><span style="color:#f92672">:</span> <span style="color:#f92672">400</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-style</span><span style="color:#f92672">:</span> <span style="color:#f92672">normal</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+<p>And that’s all it took. Fonts were now inlined.</p>
+<p>The result?</p>
+<figure class="image"><a href="/r/3442892953.webp"><img src="/r/3442892953.webp" width="950" height="177" alt="Speed Index: 1.0s" loading="lazy"></a></figure>
+<p>Much better.</p>
+<h3 id="you-have-to-optimize-the-font-files-before-inlining">You Have to Optimize the Font Files Before Inlining</h3>
+<p>Note that had we not optimized our font files so heavily first, inlining them would not have been possible. Obviously you can’t inline megabytes of data in the HTML, that would kill performance. But because we first got our font files down to a total of just 18 kB, we could easily inline them without bloating the HTML too badly.</p>
+<p>In fact, even with <em>all</em> fonts <em>and</em> CSS inlined, the HTML for our front page comes in at just 35 kB gzipped. Which means that even on a janky 1.6384 Mbps mobile connection, that’s just 171 milliseconds of downloading before the browser can render everything on the page (except the images of course, which will be gradually filled in as they are downloaded).</p>
+<h2 id="conclusion-fonts-matter">Conclusion: Fonts Matter</h2>
+<p>With all these things in place, we finally landed consistent 100 perfect scores. There is no way we could have done that without heavily optimizing fonts.</p>
+<p>To recap:</p>
+<ul>
+<li><strong>We started out with 3 Mb of unoptimized fonts.</strong></li>
+<li><strong>By compression and extreme subsetting we got that down to 18 kB.</strong></li>
+<li><strong>This reduced the font download time to only 88 milliseconds, getting us close to the perfect score.</strong></li>
+<li><strong>Finally, inlining sealed the deal, locking in that sweet 100.</strong></li>
+</ul>
+<h2 id="next-step-optimize-images">Next Step: Optimize Images</h2>
+<p>Of course, optimizing fonts isn’t the only thing you need to do to reach PageSpeed Nirvana.</p>
+<p>Getting your image game up to par also plays a large role.</p>
+<p>But that’s for the next part, where we’ll take a closer look at how to use modern image formats, combined with lazy loading and responsive image declarations.</p>
+<p>Read on here: <a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/"><strong>Part 3: Optimize Images</strong></a>.</p>
+<hr>
+<p>For your convenience, here are all the parts in the series again:</p>
+<ul>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score/">Part 0: Introduction</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">Part 1: Big Picture</a></strong></li>
+<li><strong>Part 2: Optimize Fonts (this article)</strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/">Part 3: Optimize Images</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-4/">Part 4: Optimize HTML and JavaScript</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/">Part 5: Optimize CSS</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-6/">Part 6: Final Results</a></strong></li>
+</ul>
+<hr>
+<p>Want to connect with us? Drop by our <a href="https://t.me/Hegequarters">Telegram Hegequarters</a> and say hi, or check out our <a href="https://x.com/HegeCoin">account on X</a>. Good vibes guaranteed!</p>
+<p>Also see our <a href="https://github.com/hege-coin/website-src">GitHub</a> for the full source code of this website.</p>
+<p>Yours truly,<br>
+<em>— Team Hege</em> ✌️</p>
+<p>PS. Check out the piece “EMERALD FORCE” below. This ULTIMATE collectible is <a href="https://drip.haus/hegecoin/collectible/hegecoin-drip-emerald-force-786f357a">up for sale on DRiP!</a></p>
+<figure class="image"><a href="/r/745831579.webp"><img src="/r/745831579.webp" width="2000" height="2000" alt="Channelling nature’s raw energy, Hege radiates a powerful green forcefield, spectacular and impenetrable." loading="lazy"></a>
+<figcaption>Channelling nature’s raw energy, Hege radiates a powerful green forcefield, spectacular and impenetrable.</figcaption>
+</figure>
+</div>
+</div>
+</article>
+</section>
+<section class="blog-f blog-entry-f">
+<p><em>This article was 100% written by human with 💛.</em></p>
+<p class="backlink"><a href="/blog/">← Back to the blog homepage</a></p>
+</section>
+</main>
+<footer><a href="/"><img width="132" height="33" src="/r/2607289839.svg" alt="HEGE" loading="lazy"></a>
+<ul class="btn-list">
+<li><a href="https://twitter.com/HegeCoin" target="_blank"><img width="50" height="45" alt="X logo" src="/r/2938068187.svg" loading="lazy"></a></li>
+<li><a href="https://t.me/Hegequarters" target="_blank"><img width="512" height="431" alt="Telegram logo" src="/r/2111933442.svg" loading="lazy"></a></li>
+<li><a href="https://linktr.ee/hegefund" target="_blank"><img width="80" height="98" alt="Linktree logo" src="/r/543747669.svg" loading="lazy"></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank"><img width="252" height="300" alt="DEX Screener logo" src="/r/3205571068.svg" loading="lazy"></a></li>
+</ul>
+<p>Disclaimer: $HEGE is a memecoin with no intrinsic value. Don't risk money you are afraid of losing. The price may go up or it may go down. We are not responsible for the price of the token.</p>
+<p>Copyright Hegecoin 2026</p>
+<p>Handcrafted with ❤️</p>
+</footer>
+<dialog closedby="any" id="nav-c">
+<div><a href="/" class="logo"><img width="822" height="205" src="/r/2607289839.svg" alt="HEGE"></a>
+<div><button onclick="document.getElementById('nav-c').close()"><img src="/r/82561575.svg" width="20" height="20" alt="X"></button></div>
+</div>
+<section><a href="/nfts/" title="Learn more about our NFT collection!">
+<div class="h-a" data-frames="/r/3446319882.avif;/r/168622860.avif;/r/785041076.avif;/r/1978746780.avif;/r/3685339383.avif"><img class="show" src="/r/1959589881.avif" width="750" height="750" loading="lazy" alt="Hegend 1"></div>
+<span><strong>Hegends NFTs</strong> <em>Learn more about our NFT collection!</em></span></a>
+<ul>
+<li><a href="/about/"><img src="/r/3587084489.svg" width="300" height="237" alt="Hege" fetchpriority="low" loading="lazy"> <span><strong>About</strong> <em>Learn all about $HEGE</em></span></a></li>
+<li><a href="/blog/"><img src="/r/2385211595.svg" width="375" height="456" alt="Newspaper article icon" fetchpriority="low" loading="lazy"> <span><strong>Blog</strong> <em>Read the latest about $HEGE</em></span></a></li>
+<li><a href="/league-of-hegends/"><img src="/r/3745193089.svg" width="30" height="30" alt="Globe icon" fetchpriority="low" loading="lazy"> <span><strong>League of Hegends</strong> <em>Meet our most valued community members</em></span></a></li>
+<li><a href="/testimonials/"><img src="/r/4054869380.svg" width="300" height="226" alt="Photograph icon" fetchpriority="low" loading="lazy"> <span><strong>Media</strong> <em>What's being said about $HEGE</em></span></a></li>
+<li><a href="/#faq" onclick="document.getElementById('nav-c').close()"><img src="/r/333550920.svg" width="30" height="30" alt="?" fetchpriority="low" loading="lazy"> <span><strong>FAQs</strong> <em>Answers to common questions</em></span></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank" class="ext"><img src="/r/610068670.svg" width="300" height="272" alt="Bar chart icon" fetchpriority="low" loading="lazy"> <span><strong>Price Chart</strong> <em>Track the $HEGE price by the second</em></span></a></li>
+<li><a href="https://drip.haus/hegecoin" target="_blank" class="ext"><img src="/r/407803855.svg" width="30" height="30" alt="Drop" fetchpriority="low" loading="lazy"> <span><strong>DRiP</strong> <em>Check out $HEGE on art platform DRiP</em></span></a></li>
+<li><a href="https://www.reddit.com/r/HegeCoin/" target="_blank" class="ext"><img src="/r/1609170980.svg" width="30" height="30" alt="Reddit logo" fetchpriority="low" loading="lazy"> <span><strong>Reddit</strong> <em>Join over 1,200 Hegends on Reddit!</em></span></a></li>
+<li><a href="https://capitoday.com/meme/hege-coin" target="_blank" class="ext"><img src="/r/298893401.svg" width="30" height="30" alt="Capitoday logo" fetchpriority="low" loading="lazy"> <span><strong>Capitoday</strong> <em>Track and vote for $HEGE on Capitoday</em></span></a></li>
+</ul>
+</section>
+</dialog>
+<template id="geoblock-msg-template">
+<div class="heavy plain box">
+<h1>Sorry!</h1>
+<p>Based on your location, you are not allowed to access the Hege website.</p>
+<p>Because of legal uncertainties, we are forced to block visitors from the following countries:</p>
+<ul>
+<li>United Kingdom</li>
+</ul>
+</div>
+</template>
+</body>
+</html>

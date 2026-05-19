@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>How To Build a Ridiculously Fast Website — Part 4: Optimize HTML and JavaScript | Hege</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-4/">
+<link rel="preload" href="/r/2812802085.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/600843795.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/915512105.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/3997950749.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/636367663.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/r/1014975537.min.css">
+<meta name="author" content="Hege">
+<meta name="description" content="In this next installment on our quest for maximum speed, it’s time to get HTML and JavaScript bloat out of our way to PageSpeed bliss.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hegecoin.com/r/2642886444.jpg">
+<link rel="alternate" type="application/atom+xml" href="https://hegecoin.com/blog/index.xml" title="Hegecoin">
+<link rel="sitemap" type="application/xml" href="https://hegecoin.com/sitemap.xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/r/2297846202.png">
+<link rel="apple-touch-icon" href="/r/3923634518.png">
+<script type="text/javascript" src="/r/70001869.min.js" async fetchpriority="low"></script>
+</head>
+<body id="b" class="">
+<header id="h">
+<nav class="full"><a href="/" class="logo"><img width="822" height="205" src="/r/2607289839.svg" alt="HEGE" fetchpriority="high"></a>
+<ul>
+<li><a href="/about/" title="Read all about Hege">About</a></li>
+<li><a href="/blog/" title="Read the latest about Hege">Blog</a></li>
+<li><a href="/nfts/" title="Visit Hege's official NFT collection">NFTs</a></li>
+<li><span onclick="document.getElementById('nav-more').classList.toggle('open'); rha()">More <svg width="14" height="7" viewbox="0 0 14 7" fill="none">
+<path d="M13 1L7 5L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+<div id="nav-more">
+<ul id="nav-items">
+<li class="hegends-item"><a href="/nfts/" title="Visit Hege's official NFT collection">
+<div class="h-a" data-frames="/r/3446319882.avif;/r/168622860.avif;/r/785041076.avif;/r/1978746780.avif;/r/3685339383.avif"><img class="show" src="/r/1959589881.avif" width="750" height="750" loading="lazy" alt="Hegend 1"></div>
+<span><strong>Hegends NFTs</strong> <em>Learn more about our NFT collection!</em></span></a></li>
+<li><a href="/league-of-hegends/"><img src="/r/3745193089.svg" width="30" height="30" alt="A globe" fetchpriority="low" loading="lazy"> <span><strong>League of Hegends</strong> <em>Meet our most valued community members</em></span></a></li>
+<li><a href="https://t.me/Hegequarters" target="_blank" class="ext"><img src="/r/2111933442.svg" width="512" height="431" alt="Telegram logo" fetchpriority="low" loading="lazy"> <span><strong>Telegram</strong> <em>Join the fun in our Hegequarters</em></span></a></li>
+<li><a href="/testimonials"><img src="/r/4054869380.svg" width="300" height="226" alt="Photograph icon" fetchpriority="low" loading="lazy"> <span><strong>Media</strong> <em>What's being said about $HEGE</em></span></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank" class="ext"><img src="/r/610068670.svg" width="300" height="272" alt="A bar chart icon" fetchpriority="low" loading="lazy"> <span><strong>Price Chart</strong> <em>Track the $HEGE price by the second</em></span></a></li>
+<li><a href="/#faq" onclick="document.getElementById('nav-more').classList.remove('open')"><img src="/r/333550920.svg" width="30" height="30" alt="?" fetchpriority="low" loading="lazy"> <span><strong>FAQs</strong> <em>Answers to frequently asked questions</em></span></a></li>
+<li><a href="https://www.reddit.com/r/HegeCoin/" target="_blank" class="ext"><img src="/r/1609170980.svg" width="30" height="30" alt="Reddit logo" fetchpriority="low" loading="lazy"> <span><strong>Reddit</strong> <em>Join over 1,200 Hegends on Reddit!</em></span></a></li>
+<li><a href="https://drip.haus/hegecoin" target="_blank" class="ext"><img src="/r/407803855.svg" width="30" height="30" alt="A drop" fetchpriority="low" loading="lazy"> <span><strong>DRiP</strong> <em>Check out $HEGE on art platform DRiP</em></span></a></li>
+<li><a href="https://capitoday.com/meme/hege-coin" target="_blank" class="ext"><img src="/r/298893401.svg" width="30" height="30" alt="Capitoday logo" fetchpriority="low" loading="lazy"> <span><strong>Capitoday</strong> <em>Track and vote for $HEGE on Capitoday</em></span></a></li>
+</ul>
+</div>
+</li>
+<li><a href="/#buy" class="yellow btn">Buy $HEGE</a></li>
+</ul>
+<p><button aria-label="Toggle mobile menu" onclick="document.getElementById('nav-c').showModal(); rha()"><img src="/r/2068178453.svg" width="20" height="20" alt="Open menu"></button></p>
+</nav>
+</header>
+<main id="main">
+<section id="blog-entry">
+<article class="blog-article">
+<div class="h">
+<h1>How To Build a Ridiculously Fast Website — Part 4: Optimize HTML and JavaScript</h1>
+<p>In this next installment on our quest for maximum speed, it’s time to get HTML and JavaScript bloat out of our way to PageSpeed bliss.</p>
+</div>
+<div class="byline-w">
+<div class="byline">
+<p><em>by</em> <span>Day</span></p>
+<p><span>Tech</span> <span>/</span> <time datetime="2026-05-04T00:00:00Z">May 4, 2026</time></p>
+</div>
+</div>
+<div class="c-w">
+<div class="c">
+<h2 id="the-journey-to-pagespeed-perfection-continues">The Journey to PageSpeed Perfection Continues</h2>
+<p>Welcome to part 4 in our series on how to build a ridiculously fast website.</p>
+<p>In this article, we’ll turn to the dynamic duo of HTML and JavaScript. We’ll have a look at how much these matter for speed, and then show how to create lean and simple code that loads fast.</p>
+<p>Here are all the articles in the series, for your convenience:</p>
+<ul>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score/">Part 0: Introduction</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">Part 1: Big Picture</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/">Part 2: Optimize Fonts</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/">Part 3: Optimize Images</a></strong></li>
+<li><strong>Part 4: Optimize HTML and JavaScript (this article)</strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/">Part 5: Optimize CSS</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-6/">Part 6: Final Results</a></strong></li>
+</ul>
+<p>Let’s HTML!</p>
+<figure class="image"><a href="/r/1641396607.webp"><img src="/r/1641396607.webp" width="1200" height="1200" alt="Hege in a boxing ring, wearing red gloves and red shorts, 100% determination and focus." loading="lazy"></a></figure>
+<h2 id="how-much-faster-can-you-get-by-optimizing-html-and-javascript">How Much Faster Can You Get by Optimizing HTML and JavaScript?</h2>
+<p>There’s a lot to be said about optimizing HTML and JavaScript. But first off, let’s just see how much you can save in terms of download size. This will give a rough idea of how important this is.</p>
+<p>Obviously, how much you can save is going to depend on a whole lot of things, and it will vary greatly from page to page. Which means it’s impossible to give a universal answer. But what we can do, is take the front page from our old unoptimized site, and compare it to the front page of our new site. (They look the same and have the same functionality, so it’s a fair comparison.)</p>
+<p>Our old site wasn’t terrible by any means, but because it was hosted on Webflow, there was a lot of crap being pulled in that we didn’t need, but had no control over.</p>
+<p>Anyway, Here are the hard numbers:</p>
+<table>
+<tr>
+<th></th>
+<th>Old front page</th>
+<th>New front page</th>
+<th>Improvement</th>
+</tr>
+<tr class="top-row">
+<td>HTML + inline JS</td>
+<td>19.3 kB</td>
+<td>8.5 kB</td>
+<td></td>
+</tr>
+<tr>
+<td>External JS (sync)</td>
+<td>95.6 kB</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr style="font-weight: bold">
+<td>Total HTML + JS</td>
+<td>114.9 kB</td>
+<td>8.5 kB</td>
+<td>13.5x</td>
+</tr>
+</table>
+<p>The table above shows the sizes of HTML plus render-blocking (synchronous) JavaScript (with standard gzip compression). This is data that the browser has to download before it can even start rendering anything on the screen. So cutting this down as much as possible is extremely important for high-performance.</p>
+<p>On a slow mobile connection (1,638.4 kb/s), downloading the 114.9 kB of the old site takes around 560 milliseconds (ms). And that’s even before considering the extra 150 ms or so of TCP roundtripping needed to load the external JavaScript files. In comparison, the 8.5 kB of the new site can be downloaded in only 42 ms, with zero overhead from extra roundtrips.</p>
+<p>That’s a <em>huge</em> improvement.</p>
+<p>Let’s see how we did it.</p>
+<h2 id="level-1">Level 1: No Frameworks, No Render-Blocking JavaScript</h2>
+<p>This initial level is where most of the gains will be done.</p>
+<h3 id="write-lean-semantic-html">Write Lean Semantic HTML</h3>
+<p>First off, write structurally sound HTML.</p>
+<p>If you have no idea what that means, that’s okay. But you do have some learning to do. There isn’t nearly enough space to explain it here in this article, but there are tons of good resources online. Start with <a href="https://web.dev/learn/html/welcome">this HTML course</a>, for example.</p>
+<p>Writing good HTML has two main benefits:</p>
+<ol>
+<li><strong>The page download size will be smaller (= faster).</strong></li>
+<li><strong>The browser will parse and render the page faster.</strong></li>
+</ol>
+<p>(As a bonus, it will also give you perfect PageSpeed accessibility and SEO scores.)</p>
+<h3 id="dont-build-a-single-page-application">Don’t Build a Single-Page Application</h3>
+<p>For a normal website, you don’t need React. You don’t need Svelte. You don’t need Next.js. Forget about those, and forget about all other kinds of frameworks or libraries.</p>
+<p>There is no reason to build your simple website as a single-page application. What you possibly win in subsequent page loading time, you lose on the initial load time (and on increased complexity). Just write custom HTML, and then sprinkle some JavaScript on top for additional functionality. If you optimize everything correctly, your site will be so fast it <em>feels</em> like a single page app anyway (thank you <a href="https://developer.chrome.com/blog/paint-holding">paint holding</a>).</p>
+<p>Don’t get caught in the let’s-use-a-framework-for-everything mentality. It will not serve you in the long run. Instead, learn the fundamentals and write lean semantic HTML, using JavaScript only when necessary.</p>
+<h3 id="avoid-all-render-blocking-javascript">Avoid All Render-Blocking JavaScript</h3>
+<p>As it turns out, avoiding frameworks and using modern HTML features, you need surprisingly little JavaScript. In our case, no more than 2.4 kB.</p>
+<p>But whatever amount you end up with, make sure to use the <code>async</code> attribute to load it in the background, without blocking rendering:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"text/javascript"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/70001869.min.js"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">async</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetchpriority</span><span style="color:#f92672">=</span><span style="color:#e6db74">"low"</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div>
+<h2 id="level-2">Level 2: Use Native HTML Features</h2>
+<p>In the past, if you wanted more sophisticated interactive elements like dialogs, popovers, and swiping, you had to resort to JavaScript.</p>
+<p>As of 2026, that is no longer true.</p>
+<h3 id="use-html-dialogs">Use HTML Dialogs</h3>
+<p>Up until a couple of years ago, if you wanted to build any sort of popups, like cookie banners or hamburger menus, you had to use JavaScript. This was messy to get right across different browsers and devices, and the go-to solution would be to let some JavaScript library handle it for you.</p>
+<p>Fortunately, since a few years back, that’s no longer needed. With HTML now natively supporting dialogs using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog"><code>&lt;dialog&gt;</code></a> element, all these things can be done with very little JavaScript. And not only that, being native, they work much more predictably and smooth, too.</p>
+<p>As an example, the hamburger menu on our mobile layout is built with an HTML dialog element:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">dialog</span> <span style="color:#a6e22e">closedby</span><span style="color:#f92672">=</span><span style="color:#e6db74">"any"</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">"nav-c"</span>&gt;
+</span></span><span style="display:flex;"><span>    ... menu content here ...
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">dialog</span>&gt;
+</span></span></code></pre></div>
+<p>To open and close the menu, we use exactly two lines of inline JavaScript, attached to two buttons.</p>
+<p>One button to open the menu:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">"document.getElementById('nav-c').showModal()"</span>&gt;...&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span></code></pre></div>
+<p>And one button to close it:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">"document.getElementById('nav-c').close()"</span>&gt;...&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span></code></pre></div>
+<p>That’s it. A perfect hamburger menu, with two lines of JavaScript.</p>
+<h3 id="use-html-popovers">Use HTML Popovers</h3>
+<p>An even newer feature in HTML is the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover"><code>popover</code></a> attribute, which lets you show all kinds of “popovers”.</p>
+<p>A popover is very similar to the dialog described above, with the difference being that a popover is always “non-modal”, meaning the user can still interact with the page behind the popover. The exact details don’t matter for the purpose of this article. The point is that whenever you have some content that you want to pop out and show in a box on top of the rest of the page, use native popovers instead of some janky JavaScript library.</p>
+<p>We use these popovers on the <a href="/league-of-hegends/">League of Hegends</a> page. With the <code>popovertarget</code> and <code>popovertargetaction</code> attributes, <em>no</em> JavaScript is needed at all.</p>
+<p>All we need is this HTML for the actual popover:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">"info-popover"</span> <span style="color:#a6e22e">popover</span><span style="color:#f92672">=</span><span style="color:#e6db74">"auto"</span>&gt;
+</span></span><span style="display:flex;"><span>    ... popover content ...
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div>
+<p>And then buttons to open and close it:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">popovertarget</span><span style="color:#f92672">=</span><span style="color:#e6db74">"info-popover"</span> <span style="color:#a6e22e">popovertargetaction</span><span style="color:#f92672">=</span><span style="color:#e6db74">"show"</span>&gt;Open&lt;<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">popovertarget</span><span style="color:#f92672">=</span><span style="color:#e6db74">"info-popover"</span> <span style="color:#a6e22e">popovertargetaction</span><span style="color:#f92672">=</span><span style="color:#e6db74">"hide"</span>&gt;Close&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span></code></pre></div>
+<p>Perfect popovers. Zero JavaScript bloat.</p>
+<h3 id="use-scroll-snapping-for-carousels">Use Scroll Snapping For Carousels</h3>
+<p>Thirdly, we have two classic carousels on our front page. On the phone, they can be swiped back and forth, and on the desktop there are two buttons below for navigation.</p>
+<p>These carousels are built with CSS scroll snapping, plus a total of 7 lines of JavaScript. Yes, 7 lines.</p>
+<p>We’ll cover all the details of this setup along with other CSS optimizations in the next article in the series.</p>
+<figure class="image"><a href="/r/2287421018.webp"><img src="/r/2287421018.webp" width="1850" height="984" alt="A carousel on Hegecoin.com showing part of the Hege backstory: To Hege's dismay, Hegena already has a boyfriend." loading="lazy"></a>
+<figcaption>Carousel on Hegecoin.com.</figcaption>
+</figure>
+<h2 id="level-3">Level 3: Minify, Shorten Fingerprints</h2>
+<p>With the native HTML features covered, we’re now entering the realm of micro-optimizations, where the fun starts!</p>
+<h3 id="minify-javascript">Minify JavaScript</h3>
+<p>First off, minify all JavaScript.</p>
+<p>How much this will save depends on how much JavaScript you have. Since we have so little, we actually don’t save anything by doing this. But it’s still a good practice, so we do it anyway.</p>
+<p>Exactly how to minify your JavaScript will depend on how your website is built. It’s usually not too complicated. In Hugo, we can just pipe the resource through the <code>minify</code> filter:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ with .Resources.Get "js/async.js" | minify }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">"text/javascript"</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">"{{ .RelPermalink }}"</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">fetchpriority</span><span style="color:#f92672">=</span><span style="color:#e6db74">"low"</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div>
+<h3 id="minify-html">Minify HTML</h3>
+<p>HTML can also be minified, mostly to remove whitespace. Honestly though, this isn’t going to matter much, because of gzip compression.</p>
+<p>That said, we still do it. Not to save space, but to make the HTML pretty. Because yes, that matters to us. (View the source of this page and see for yourself!)</p>
+<p>Here’s how we do it: after building the site with Hugo, the last step of our build process runs the output through <a href="https://www.html-tidy.org/">Tidy</a>, with the following options:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Make output HTML pretty</span>
+</span></span><span style="display:flex;"><span>find build-output -path <span style="color:#e6db74">"*.html"</span> -type f <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -exec tidy <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --quiet yes <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --indent no <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --show-filename yes <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --drop-empty-elements no <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --fix-style-tags no <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --warn-proprietary-attributes no <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --wrap <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --tidy-mark no <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --omit-optional-tags no <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -o <span style="color:#f92672">{}</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</span></span></code></pre></div>
+<p>(If you’re even more hardcore than we are, you could change <code>--omit-optional-tags</code> to <code>yes</code>, to make the HTML a tiny tiny bit smaller.)</p>
+<h3 id="shorten-asset-fingerprints">Shorten Asset Fingerprints</h3>
+<p>Now to the final micro-optimization. To be honest, this one is probably not going to make a difference. But it was interesting, so we’ll cover it just for that.</p>
+<p>In the <a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">first article</a> in the series, we explained how to use asset fingerprinting to optimize HTTP caching. In Hugo, this is easy, just add the <code>fingerprint</code> filter:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ with resources.Get "img/apple-touch-icon.png" | fingerprint }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"apple-touch-icon"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"{{ .RelPermalink }}"</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div>
+<p>This automatically fingerprints the asset and produces this HTML:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"apple-touch-icon"</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/img/apple-touch-icon.a3ba4e3e5ee46d71e8430e5e22f36f6d490a2c36e5da38c5f5cb46bbbee46ac2.png"</span>&gt;
+</span></span></code></pre></div>
+<p>Okay. So what’s the problem here?</p>
+<p>The problem here is that awfully long hash in the filename.</p>
+<p>By default, Hugo uses the <code>sha256</code> hashing algorithm, which gives 256 bit hashes. Encoded as 64 character hexadecimal strings, this means that every fingerprint adds 64 bytes to the HTML. And because these hashes are irregular, gzip compression can only help so much.</p>
+<p>Now, 64 bytes might not seem like a whole lot, and to be honest… it isn’t. But, the question is, can we do better?</p>
+<p>Yes, we can.</p>
+<p>A first improvement would be to use the <code>md5</code> algorithm instead, which cuts the hash size in half, down to 32 characters.</p>
+<p>But we can do even better than that.</p>
+<p>Let’s use the <a href="https://gohugo.io/functions/hash/fnv32a/">32-bit FNV</a> hash. This is good enough for us, and even when represented by an integer, it’s just 10 characters. And while we’re at it, let’s also put all the fingerprinted assets under <code>/r/</code>, without including their original filenames, to make things neater and save a few bytes more.</p>
+<p>Putting this together, we can make a partial like this:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ $res := resources.Get . }}
+</span></span><span style="display:flex;"><span>{{ $fp := $res | fingerprint }}
+</span></span><span style="display:flex;"><span>{{ $tgt := printf "/r/%v.%s" (hash.FNV32a $fp.Data.Integrity) $fp.MediaType.FirstSuffix.Suffix }}
+</span></span><span style="display:flex;"><span>{{ return resources.Copy $tgt $res }}
+</span></span></code></pre></div>
+<p>And then use it like so:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ with partial "res.html" "img/apple-touch-icon.png" }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"apple-touch-icon"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"{{ .RelPermalink }}"</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div>
+<p>This fingerprints the asset, and produces this HTML:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"apple-touch-icon"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"/r/3923634518.png"</span>&gt;
+</span></span></code></pre></div>
+<p>Neat.</p>
+<p>Did this make an actual difference? No. All in all, it saved us around 2 kB, or 10 milliseconds of download time on a slow connection. But it made us feel good.</p>
+<h2 id="conclusion-no-easy-tricks">Conclusion: No Easy Tricks</h2>
+<p>And that concludes all the ways we optimized HTML and JavaScript.</p>
+<p>As you saw from the numbers in the beginning of the article, taken together, these optimizations had a huge impact on cutting the time to start rendering, saving hundreds of milliseconds. That has a real impact on user experience.</p>
+<p>What’s important to understand here is that these gains mostly came from <em>avoiding</em> things, rather than fancy technical tricks.</p>
+<p>The most impactful things by far were these:</p>
+<ul>
+<li><strong>Write lean well structured HTML.</strong></li>
+<li><strong>Don’t use JavaScript frameworks.</strong></li>
+<li><strong>Use native HTML features instead of JavaScript.</strong></li>
+</ul>
+<p>On top of that, make sure to also:</p>
+<ul>
+<li><strong>Load all JavaScript asynchronously.</strong></li>
+</ul>
+<p>Minifying JavaScript is a good idea, too. But if you do all the above, you might end up with so little JavaScript that it doesn’t really matter anyway.</p>
+<p>Finally, a few optimizations were neat, but had little effect on actual performance:</p>
+<ul>
+<li><strong>Minify HTML.</strong></li>
+<li><strong>Shorten fingerprint hashes.</strong></li>
+</ul>
+<h2 id="the-next-step-optimize-css">The Next Step: Optimize CSS</h2>
+<p>Well. That was it for this article. Prior in the series, we’ve covered how to optimize both fonts and images. With this article, we’ve now also covered HTML and JavaScript.</p>
+<p>That only leaves one big piece left to tackle: CSS.</p>
+<p>And that will be the topic of the next article, where we’ll show how to use CSS animations, scroll snapping, and how to minify and inline to really make everything move fast.</p>
+<p>Read on here: <a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/"><strong>Part 5: Optimize CSS</strong></a>.</p>
+<hr>
+<p>For your convenience, here are all the parts in the series again:</p>
+<ul>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score/">Part 0: Introduction</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">Part 1: Big Picture</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/">Part 2: Optimize Fonts</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/">Part 3: Optimize Images</a></strong></li>
+<li><strong>Part 4: Optimize HTML and JavaScript (this article)</strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/">Part 5: Optimize CSS</a></strong></li>
+<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-6/">Part 6: Final Results</a></strong></li>
+</ul>
+<hr>
+<p>Want to connect with us? Drop by our <a href="https://t.me/Hegequarters">Telegram Hegequarters</a> and say hi, or check out our <a href="https://x.com/HegeCoin">account on X</a>. Good vibes guaranteed!</p>
+<p>Also see our <a href="https://github.com/hege-coin/website-src">GitHub</a> for the full source code of this website.</p>
+<p>Yours truly,<br>
+<em>— Team Hege</em> ✌️</p>
+<p>PS. Check out the piece “BLUE AETHER” below. This collectible is <a href="https://drip.haus/hegecoin/collectible/hegecoin-drip-blue-aether-594fdfb6">up for sale on our DRiP!</a></p>
+<figure class="image"><a href="/r/3853810576.webp"><img src="/r/3853810576.webp" width="1200" height="1200" alt="A shaded Hege with dark face and blue neon glowing eyes set against a dark starry background. Right hand in his pocket, left hand held up, with a small glowing globe floating above it." loading="lazy"></a>
+<figcaption>The Blue Aether guardian protects our reality by channeling universal flow and wisdom.</figcaption>
+</figure>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+    }
+    th {
+        text-align: left;
+        border-bottom: 1px solid #999;
+        padding-bottom: 5px;
+    }
+    td {
+        padding: 3px;
+    }
+    .top-row td {
+        padding-top: 7px;
+    }
+</style></div>
+</div>
+</article>
+</section>
+<section class="blog-f blog-entry-f">
+<p><em>This article was 100% written by human with 💛.</em></p>
+<p class="backlink"><a href="/blog/">← Back to the blog homepage</a></p>
+</section>
+</main>
+<footer><a href="/"><img width="132" height="33" src="/r/2607289839.svg" alt="HEGE" loading="lazy"></a>
+<ul class="btn-list">
+<li><a href="https://twitter.com/HegeCoin" target="_blank"><img width="50" height="45" alt="X logo" src="/r/2938068187.svg" loading="lazy"></a></li>
+<li><a href="https://t.me/Hegequarters" target="_blank"><img width="512" height="431" alt="Telegram logo" src="/r/2111933442.svg" loading="lazy"></a></li>
+<li><a href="https://linktr.ee/hegefund" target="_blank"><img width="80" height="98" alt="Linktree logo" src="/r/543747669.svg" loading="lazy"></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank"><img width="252" height="300" alt="DEX Screener logo" src="/r/3205571068.svg" loading="lazy"></a></li>
+</ul>
+<p>Disclaimer: $HEGE is a memecoin with no intrinsic value. Don't risk money you are afraid of losing. The price may go up or it may go down. We are not responsible for the price of the token.</p>
+<p>Copyright Hegecoin 2026</p>
+<p>Handcrafted with ❤️</p>
+</footer>
+<dialog closedby="any" id="nav-c">
+<div><a href="/" class="logo"><img width="822" height="205" src="/r/2607289839.svg" alt="HEGE"></a>
+<div><button onclick="document.getElementById('nav-c').close()"><img src="/r/82561575.svg" width="20" height="20" alt="X"></button></div>
+</div>
+<section><a href="/nfts/" title="Learn more about our NFT collection!">
+<div class="h-a" data-frames="/r/3446319882.avif;/r/168622860.avif;/r/785041076.avif;/r/1978746780.avif;/r/3685339383.avif"><img class="show" src="/r/1959589881.avif" width="750" height="750" loading="lazy" alt="Hegend 1"></div>
+<span><strong>Hegends NFTs</strong> <em>Learn more about our NFT collection!</em></span></a>
+<ul>
+<li><a href="/about/"><img src="/r/3587084489.svg" width="300" height="237" alt="Hege" fetchpriority="low" loading="lazy"> <span><strong>About</strong> <em>Learn all about $HEGE</em></span></a></li>
+<li><a href="/blog/"><img src="/r/2385211595.svg" width="375" height="456" alt="Newspaper article icon" fetchpriority="low" loading="lazy"> <span><strong>Blog</strong> <em>Read the latest about $HEGE</em></span></a></li>
+<li><a href="/league-of-hegends/"><img src="/r/3745193089.svg" width="30" height="30" alt="Globe icon" fetchpriority="low" loading="lazy"> <span><strong>League of Hegends</strong> <em>Meet our most valued community members</em></span></a></li>
+<li><a href="/testimonials/"><img src="/r/4054869380.svg" width="300" height="226" alt="Photograph icon" fetchpriority="low" loading="lazy"> <span><strong>Media</strong> <em>What's being said about $HEGE</em></span></a></li>
+<li><a href="/#faq" onclick="document.getElementById('nav-c').close()"><img src="/r/333550920.svg" width="30" height="30" alt="?" fetchpriority="low" loading="lazy"> <span><strong>FAQs</strong> <em>Answers to common questions</em></span></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank" class="ext"><img src="/r/610068670.svg" width="300" height="272" alt="Bar chart icon" fetchpriority="low" loading="lazy"> <span><strong>Price Chart</strong> <em>Track the $HEGE price by the second</em></span></a></li>
+<li><a href="https://drip.haus/hegecoin" target="_blank" class="ext"><img src="/r/407803855.svg" width="30" height="30" alt="Drop" fetchpriority="low" loading="lazy"> <span><strong>DRiP</strong> <em>Check out $HEGE on art platform DRiP</em></span></a></li>
+<li><a href="https://www.reddit.com/r/HegeCoin/" target="_blank" class="ext"><img src="/r/1609170980.svg" width="30" height="30" alt="Reddit logo" fetchpriority="low" loading="lazy"> <span><strong>Reddit</strong> <em>Join over 1,200 Hegends on Reddit!</em></span></a></li>
+<li><a href="https://capitoday.com/meme/hege-coin" target="_blank" class="ext"><img src="/r/298893401.svg" width="30" height="30" alt="Capitoday logo" fetchpriority="low" loading="lazy"> <span><strong>Capitoday</strong> <em>Track and vote for $HEGE on Capitoday</em></span></a></li>
+</ul>
+</section>
+</dialog>
+<template id="geoblock-msg-template">
+<div class="heavy plain box">
+<h1>Sorry!</h1>
+<p>Based on your location, you are not allowed to access the Hege website.</p>
+<p>Because of legal uncertainties, we are forced to block visitors from the following countries:</p>
+<ul>
+<li>United Kingdom</li>
+</ul>
+</div>
+</template>
+</body>
+</html>

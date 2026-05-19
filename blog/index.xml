@@ -6,21 +6,35 @@
     <description>Read the latest about $HEGE here!</description>
     <generator>Hege</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hegecoin.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 5: Optimize CSS</title>
-      <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/</link>
-      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/</guid>
-      <description>Welcome to the last piece of the performance puzzle, where we take a close look at how to optimize CSS like nobody&amp;rsquo;s business.&#xA;</description>
+      <title>How To Build a Ridiculously Fast Website</title>
+      <link>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website/</link>
+      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website/</guid>
+      <description>Through a series of 6 articles, we set out on a grand quest to build the fastest memecoin website on the planet. Come follow along and learn how you too can join us in page-speed paradise.&#xA;</description>
     </item>
     <item>
-      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 4: Optimize HTML and JavaScript</title>
-      <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-4/</link>
+      <title>How To Build a Ridiculously Fast Website — Part 6: Final Results</title>
+      <link>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-6/</link>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-6/</guid>
+      <description>The quest for the fastest memecoin website on the planet is complete. The result? Even on a budget phone with janky Internet, it&amp;rsquo;s fast. On desktop, it literally loads in the blink of an eye.&#xA;</description>
+    </item>
+    <item>
+      <title>How To Build a Ridiculously Fast Website — Part 5: Optimize CSS</title>
+      <link>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-5/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-5/</guid>
+      <description>It&amp;rsquo;s time to tackle the last piece in our performance puzzle. Join us as we take a close look at how to optimize CSS like nobody&amp;rsquo;s business.&#xA;</description>
+    </item>
+    <item>
+      <title>How To Build a Ridiculously Fast Website — Part 4: Optimize HTML and JavaScript</title>
+      <link>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-4/</link>
       <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-4/</guid>
-      <description>In this next installment on the path to the promised land of lightning-fast websites, it&amp;rsquo;s time to get HTML and JavaScript bloat out of our way to PageSpeed bliss.&#xA;</description>
+      <guid>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-4/</guid>
+      <description>In this next installment on our quest for maximum speed, it&amp;rsquo;s time to get HTML and JavaScript bloat out of our way to PageSpeed bliss.&#xA;</description>
     </item>
     <item>
       <title>HEGE BuyBot, Reporting for Duty</title>
@@ -30,25 +44,25 @@
       <description>HEGE BuyBot is back in Hegequarters. After a few weeks of downtime for maintenance, moving from Solscan to Helius, our signature custom buy messages and easter eggs are now back on the menu!&#xA;</description>
     </item>
     <item>
-      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 3: Optimize Images</title>
-      <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/</link>
+      <title>How To Build a Ridiculously Fast Website — Part 3: Optimize Images</title>
+      <link>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-3/</link>
       <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/</guid>
+      <guid>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-3/</guid>
       <description>With fonts down, we turn our performance hungry snouts to images, and sniff out how to use AVIF, MP4, lazy loading and more to reach the promised land of PageSpeed perfection.&#xA;</description>
     </item>
     <item>
-      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 2: Optimize Fonts</title>
-      <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/</link>
+      <title>How To Build a Ridiculously Fast Website — Part 2: Optimize Fonts</title>
+      <link>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-2/</link>
       <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/</guid>
+      <guid>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-2/</guid>
       <description>Continuing our journey to PageSpeed Paradise, this week we turn to fonts, showing how compression and heavy subsetting brought 3 MB of unoptimized font files down to a minimal 18 kB.&#xA;</description>
     </item>
     <item>
-      <title>How We Rebuilt the Hege Website to Get a Perfect PageSpeed Score. Part 1: Big Picture</title>
-      <link>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/</link>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://hegecoin.com/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/</guid>
-      <description>Nailing the PageSpeed Insights performance metric takes a bit of work, but it&amp;rsquo;s totally possible. Even for a slightly traumatized webmonkey with a penchant for furry ears.&#xA;</description>
+      <title>How To Build a Ridiculously Fast Website — Part 1: Big Picture</title>
+      <link>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-1/</link>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://hegecoin.com/blog/how-to-build-a-ridiculously-fast-website-pt-1/</guid>
+      <description>Nailing the PageSpeed performance score takes a bit of work, but it&amp;rsquo;s totally possible. Even for a slightly traumatized webmonkey with a penchant for furry ears.&#xA;</description>
     </item>
     <item>
       <title>New HEGE X Spaces: Come Tell Us What You&#39;re Building!</title>
