@@ -72,12 +72,12 @@
 <p>Here are all the articles in the series, for your convenience:</p>
 <ul>
 <li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website/">Part 0: Introduction</a></strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">Part 1: Big Picture</a></strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/">Part 2: Optimize Fonts</a></strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/">Part 3: Optimize Images</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-1/">Part 1: Big Picture</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-2/">Part 2: Optimize Fonts</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-3/">Part 3: Optimize Images</a></strong></li>
 <li><strong>Part 4: Optimize HTML and JavaScript (this article)</strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/">Part 5: Optimize CSS</a></strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-6/">Part 6: Final Results</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-5/">Part 5: Optimize CSS</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-6/">Part 6: Final Results</a></strong></li>
 </ul>
 <p>Let’s HTML!</p>
 <figure class="image"><a href="/r/1641396607.webp"><img src="/r/1641396607.webp" width="1200" height="1200" alt="Hege in a boxing ring, wearing red gloves and red shorts, 100% determination and focus." loading="lazy"></a></figure>
@@ -220,7 +220,7 @@
 <p>(If you’re even more hardcore than we are, you could change <code>--omit-optional-tags</code> to <code>yes</code>, to make the HTML a tiny tiny bit smaller.)</p>
 <h3 id="shorten-asset-fingerprints">Shorten Asset Fingerprints</h3>
 <p>Now to the final micro-optimization. To be honest, this one is probably not going to make a difference. But it was interesting, so we’ll cover it just for that.</p>
-<p>In the <a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">first article</a> in the series, we explained how to use asset fingerprinting to optimize HTTP caching. In Hugo, this is easy, just add the <code>fingerprint</code> filter:</p>
+<p>In the <a href="/blog/how-to-build-a-ridiculously-fast-website-pt-1/">first article</a> in the series, we explained how to use asset fingerprinting to optimize HTTP caching. In Hugo, this is easy, just add the <code>fingerprint</code> filter:</p>
 <div class="highlight">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ with resources.Get "img/apple-touch-icon.png" | fingerprint }}
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">"apple-touch-icon"</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">"{{ .RelPermalink }}"</span>&gt;
@@ -283,17 +283,17 @@
 <p>Well. That was it for this article. Prior in the series, we’ve covered how to optimize both fonts and images. With this article, we’ve now also covered HTML and JavaScript.</p>
 <p>That only leaves one big piece left to tackle: CSS.</p>
 <p>And that will be the topic of the next article, where we’ll show how to use CSS animations, scroll snapping, and how to minify and inline to really make everything move fast.</p>
-<p>Read on here: <a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/"><strong>Part 5: Optimize CSS</strong></a>.</p>
+<p>Read on here: <a href="/blog/how-to-build-a-ridiculously-fast-website-pt-5/"><strong>Part 5: Optimize CSS</strong></a>.</p>
 <hr>
 <p>For your convenience, here are all the parts in the series again:</p>
 <ul>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score/">Part 0: Introduction</a></strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-1/">Part 1: Big Picture</a></strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-2/">Part 2: Optimize Fonts</a></strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-3/">Part 3: Optimize Images</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website/">Part 0: Introduction</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-1/">Part 1: Big Picture</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-2/">Part 2: Optimize Fonts</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-3/">Part 3: Optimize Images</a></strong></li>
 <li><strong>Part 4: Optimize HTML and JavaScript (this article)</strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-5/">Part 5: Optimize CSS</a></strong></li>
-<li><strong><a href="/blog/how-we-rebuilt-the-hege-website-to-get-a-perfect-pagespeed-score-pt-6/">Part 6: Final Results</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-5/">Part 5: Optimize CSS</a></strong></li>
+<li><strong><a href="/blog/how-to-build-a-ridiculously-fast-website-pt-6/">Part 6: Final Results</a></strong></li>
 </ul>
 <hr>
 <p>Want to connect with us? Drop by our <a href="https://t.me/Hegequarters">Telegram Hegequarters</a> and say hi, or check out our <a href="https://x.com/HegeCoin">account on X</a>. Good vibes guaranteed!</p>
