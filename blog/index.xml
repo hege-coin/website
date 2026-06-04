@@ -6,8 +6,15 @@
     <description>Read the latest about $HEGE here!</description>
     <generator>Hege</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hegecoin.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Let&#39;s Build A Buy Bot</title>
+      <link>https://hegecoin.com/blog/lets-build-a-buy-bot/</link>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hegecoin.com/blog/lets-build-a-buy-bot/</guid>
+      <description>Is the HEGE BuyBot an over-engineered monstrosity, or a masterpiece of modular elegance? You be the judge!&#xA;</description>
+    </item>
     <item>
       <title>Be the Person Who Takes Initiative, and Your World Will Forever Change</title>
       <link>https://hegecoin.com/blog/be-the-person-who-takes-initiative-and-your-world-will-forever-change/</link>

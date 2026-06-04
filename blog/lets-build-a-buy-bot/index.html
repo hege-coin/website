@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Let's Build A Buy Bot | Hege</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://hegecoin.com/blog/lets-build-a-buy-bot/">
+<link rel="preload" href="/r/2812802085.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/600843795.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/915512105.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/3997950749.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/r/636367663.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/r/1046861114.min.css">
+<meta name="author" content="Hege">
+<meta name="description" content="Is the HEGE BuyBot an over-engineered monstrosity, or a masterpiece of modular elegance? You be the judge!">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hegecoin.com/r/4128256090.jpg">
+<link rel="alternate" type="application/atom+xml" href="https://hegecoin.com/blog/index.xml" title="Hegecoin">
+<link rel="sitemap" type="application/xml" href="https://hegecoin.com/sitemap.xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/r/2297846202.png">
+<link rel="apple-touch-icon" href="/r/3923634518.png">
+<script type="text/javascript" src="/r/70001869.min.js" async fetchpriority="low"></script>
+</head>
+<body id="b" class="">
+<header id="h">
+<nav class="full"><a href="/" class="logo"><img width="822" height="205" src="/r/2607289839.svg" alt="HEGE" fetchpriority="high"></a>
+<ul>
+<li><a href="/about/" title="Read all about Hege">About</a></li>
+<li><a href="/blog/" title="Read the latest about Hege">Blog</a></li>
+<li><a href="/nfts/" title="Visit Hege's official NFT collection">NFTs</a></li>
+<li><span onclick="document.getElementById('nav-more').classList.toggle('open'); rha()">More <svg width="14" height="7" viewbox="0 0 14 7" fill="none">
+<path d="M13 1L7 5L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+<div id="nav-more">
+<ul id="nav-items">
+<li class="hegends-item"><a href="/nfts/" title="Visit Hege's official NFT collection">
+<div class="h-a" data-frames="/r/3446319882.avif;/r/168622860.avif;/r/785041076.avif;/r/1978746780.avif;/r/3685339383.avif"><img class="show" src="/r/1959589881.avif" width="750" height="750" loading="lazy" alt="Hegend 1"></div>
+<span><strong>Hegends NFTs</strong> <em>Learn more about our NFT collection!</em></span></a></li>
+<li><a href="/league-of-hegends/"><img src="/r/3745193089.svg" width="30" height="30" alt="A globe" fetchpriority="low" loading="lazy"> <span><strong>League of Hegends</strong> <em>Meet our most valued community members</em></span></a></li>
+<li><a href="https://t.me/Hegequarters" target="_blank" class="ext"><img src="/r/2111933442.svg" width="512" height="431" alt="Telegram logo" fetchpriority="low" loading="lazy"> <span><strong>Telegram</strong> <em>Join the fun in our Hegequarters</em></span></a></li>
+<li><a href="/testimonials"><img src="/r/4054869380.svg" width="300" height="226" alt="Photograph icon" fetchpriority="low" loading="lazy"> <span><strong>Media</strong> <em>What's being said about $HEGE</em></span></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank" class="ext"><img src="/r/610068670.svg" width="300" height="272" alt="A bar chart icon" fetchpriority="low" loading="lazy"> <span><strong>Price Chart</strong> <em>Track the $HEGE price by the second</em></span></a></li>
+<li><a href="/#faq" onclick="document.getElementById('nav-more').classList.remove('open')"><img src="/r/333550920.svg" width="30" height="30" alt="?" fetchpriority="low" loading="lazy"> <span><strong>FAQs</strong> <em>Answers to frequently asked questions</em></span></a></li>
+<li><a href="https://www.reddit.com/r/HegeCoin/" target="_blank" class="ext"><img src="/r/1609170980.svg" width="30" height="30" alt="Reddit logo" fetchpriority="low" loading="lazy"> <span><strong>Reddit</strong> <em>Join over 1,200 Hegends on Reddit!</em></span></a></li>
+<li><a href="https://drip.haus/hegecoin" target="_blank" class="ext"><img src="/r/407803855.svg" width="30" height="30" alt="A drop" fetchpriority="low" loading="lazy"> <span><strong>DRiP</strong> <em>Check out $HEGE on art platform DRiP</em></span></a></li>
+<li><a href="https://capitoday.com/meme/hege-coin" target="_blank" class="ext"><img src="/r/298893401.svg" width="30" height="30" alt="Capitoday logo" fetchpriority="low" loading="lazy"> <span><strong>Capitoday</strong> <em>Track and vote for $HEGE on Capitoday</em></span></a></li>
+</ul>
+</div>
+</li>
+<li><a href="/#buy" class="yellow btn">Buy $HEGE</a></li>
+</ul>
+<p><button aria-label="Toggle mobile menu" onclick="document.getElementById('nav-c').showModal(); rha()"><img src="/r/2068178453.svg" width="20" height="20" alt="Open menu"></button></p>
+</nav>
+</header>
+<main id="main">
+<section id="blog-entry">
+<article class="blog-article">
+<div class="h">
+<h1>Let's Build A Buy Bot</h1>
+<p>Is the HEGE BuyBot an over-engineered monstrosity, or a masterpiece of modular elegance? You be the judge!</p>
+</div>
+<div class="byline-w">
+<div class="byline">
+<p><em>by</em> <span>Day</span></p>
+<p><span>Tech</span> <span>/</span> <time datetime="2026-06-04T00:00:00Z">June 4, 2026</time></p>
+</div>
+</div>
+<div class="c-w">
+<div class="c">
+<h2 id="i-mean-how-hard-could-it-be">“I Mean, How Hard Could It Be?”</h2>
+<p>Hey Hegends,</p>
+<p>It’s <a href="https://cryptobyday.net/">Day</a> back at the keyboard again. This one is going to be another full-on nerd assault, so brace yourself!</p>
+<p>As you may or may not know, we have our very own <a href="/blog/hege-buybot-reporting-for-duty/">HEGE BuyBot</a> running in <a href="https://t.me/Hegequarters">Hegequarters</a>, delivering our signature style buy messages.</p>
+<p>It was in October last year that I felt enough is enough, I’m gonna roll up my proverbial sleeves, and build a buy bot. The external bots we used back then never worked right, and I was tired of seeing everybody complain about it all. the. time.</p>
+<p>So I decided to build a whole new one from scratch. Because why not. (And how hard could it be, right?)</p>
+<p>In the end, I came up with a bot that’s possibly horribly over-engineered. Possibly a masterpiece of modular elegance. Or most likely, a bit of both.</p>
+<p>You be the judge!</p>
+<figure class="image"><a href="/r/564330325.webp"><img src="/r/564330325.webp" width="1200" height="1200" alt="Hege wearing a blue headband, holding a knife in his mouth, making a plus sign with his fingers." loading="lazy"></a></figure>
+<h2 id="what-is-the-hege-buybot">What Is the HEGE BuyBot?</h2>
+<p>The HEGE BuyBot is a Python program that’s constantly monitoring the Solana blockchain for $HEGE buys.</p>
+<p>Whenever it detects a buy, it sends off a message to the <a href="https://t.me/Hegequarters">Hegequarters</a> Telegram group. The exact message will differ depending on the USD value of the buy, and there are a bunch of hidden easter eggs in there for certain USD values, too.</p>
+<p>Like this one here, which will bring a smile to any fellow enjoyor of <a href="https://www.imdb.com/title/tt0113243/">90s hacker culture cheese</a>:</p>
+<figure class="image"><a href="/r/3064937605.webp"><img src="/r/3064937605.webp" width="1032" height="1416" alt="Telegram message showing $1337 worth of $HEGE bought." loading="lazy"></a>
+<figcaption>Mess With the Best, Die Like the Rest.</figcaption>
+</figure>
+<h2 id="how-data-flows-through-the-system">How Data Flows Through the System</h2>
+<p>At the top level, HEGE BuyBot is a Python package, split in two parts:</p>
+<ol>
+<li>A <strong>bot server</strong> that builds and sends messages.</li>
+<li>One or more <strong>bot clients</strong> that feed buys into the server.</li>
+</ol>
+<p>Here’s a diagram showing how data flows through the system:</p>
+<figure class="image"><img src="/r/2170653376.svg" alt="How data flows through the HEGE BuyBot" loading="lazy">
+<figcaption>Data flow in HEGE BuyBot.</figcaption>
+</figure>
+<script>
+/*
+<figure class="image">
+```mermaid
+flowchart LR
+    subgraph hbb ["HEGE Buy Bot"]
+    helius["Helius client"]-->|ZeroMQ|server["Bot server"]
+    c2["Another client"]-->|ZeroMQ|server
+    end
+    webhook["Helius"]-->|Webhook|helius
+    s2["..."]-->c2
+    server-->|HTTP API|Telegram
+    server-->d2["..."]
+```
+</figure>
+*/
+</script>
+<p>On the left side of the diagram you have the buy data coming into the system. In the middle you have the actual HEGE BuyBot, consisting of the bot server and the bot clients. On the right side you have the buy messages coming out of the system, into Telegram etc.</p>
+<p>On the output side, there is exactly one bot server running. When it starts up, it creates a ZeroMQ socket that it listens to for incoming buys. (ZeroMQ acts as a shared message queue.)</p>
+<p>On the input side, there can be one or more bot clients running in parallel, each getting buy data from some source. After processing, the clients forward the buys to the server over the ZeroMQ socket. A client for Helius webhooks is built in. Other clients could be easily added.</p>
+<p>When a buy comes in to the bot server over the ZeroMQ socket, the server generates one or more messages, and then sends them out. Support for sending messages to Telegram is built in. Other message sinks could be easily added.</p>
+<p>There are two main reasons for this modular design:</p>
+<ol>
+<li><strong>It’s easier to build and test the server and the clients individually.</strong></li>
+<li><strong>New clients can be added with zero changes to the rest of the system.</strong></li>
+</ol>
+<p>Internally, the bot server itself is also designed in a modular way, which we’ll dive into next.</p>
+<h2 id="bot-server-architecture">Bot Server Architecture</h2>
+<p>The bot server is built as a pipeline — buys come in at the start of the pipeline (through the ZeroMQ socket), gets processed, and then finally messages are sent out at the end of the pipeline.</p>
+<p>This pipeline is connected by queues, and each part of the pipeline runs in its own thread, communicating via explicit interfaces.</p>
+<p>This modular setup makes the bot server extremely easy to extend. And it makes it very easy to test, too.</p>
+<p>Here is a schematic view of the pipeline:</p>
+<figure class="image"><img src="/r/2631085249.svg" alt="Schematic view of the bot server" loading="lazy">
+<figcaption>Bot server schematic.</figcaption>
+</figure>
+<script>
+/*
+<figure class="image">
+
+```mermaid
+flowchart TD
+    bot_client_1["Bot client 1"]
+    bot_client_2["Bot client 2"]
+    bot_client_n["Bot client n"]
+    subgraph server[" "]
+    zero_mq["ZeroMQ socket"]
+    fetch_buys_t(["fetch-buys (Thread)"])
+    raw_buys_q["Unprocessed buys (Queue)"]
+    buys_t(["buy-transform (Thread)"])
+    buys_q["Buys (Queue)"]
+    msg_q_1["Messages 1\n(Queue)"]
+    msg_q_2["Messages 2\n(Queue)"]
+    msg_q_n["Messages n\n(Queue)"]
+    msg_sink_1(["message-sink-1 (Thread)"])
+    msg_sink_2(["message-sink-2 (Thread)"])
+    msg_sink_n(["message-sink-n (Thread)"])
+    get_messages_t(["get-messages (Thread)"])
+    err_t(["err-handler (Thread)"])
+    err_q["Errors (Queue)"]
+    zero_mq-->fetch_buys_t
+    fetch_buys_t-->raw_buys_q
+    raw_buys_q-->buys_t
+    buys_t-->buys_q
+    buys_q-->get_messages_t
+    get_messages_t-->msg_q_1
+    get_messages_t-->msg_q_2
+    get_messages_t-->msg_q_n
+    msg_q_1-->msg_sink_1
+    msg_q_2-->msg_sink_2
+    msg_q_n-->msg_sink_n
+    err_q-->err_t
+    end
+    bot_client_1-->zero_mq
+    bot_client_2-->zero_mq
+    bot_client_n-->zero_mq
+    msg_service_1["Message service 1\n(external)"]
+    msg_service_2["Message service 2\n(external)"]
+    msg_service_n["Message service n\n(external)"]
+    msg_sink_1-->msg_service_1
+    msg_sink_2-->msg_service_2
+    msg_sink_n-->msg_service_n
+```
+
+</figure>
+*/
+</script>
+<p>The <em>buy-transform</em> step adds details to the buy that might not have been available to the bot client. For example the buyer’s wallet balance, the current market cap of $HEGE, and the spot price of $SOL.</p>
+<p>Using queues everywhere makes everything work in parallel, without the need for custom locks. This way, the queues also become the interfaces between the different parts of the pipeline, making everything extremely modular and easy to understand and modify.</p>
+<p>If an error occurs in some thread, the thread puts an exception on the <em>Errors</em> queue. The error is then handled by an error handler running in its own <em>err‑handler</em> thread. Also, all threads have a reference to a break event, that can be used to shut down the whole bot gracefully.</p>
+<p>Note that each message sink runs in its own thread. This means that messages to different sinks will be sent in parallel, and a delay or timeout in one sink will not affect the others. So for example, a delay or timeout in sending messages to Telegram will not affect messages going out to Discord.</p>
+<h2 id="message-building-is-completely-programmable">Message Building Is Completely Programmable</h2>
+<p>Let’s zoom in on the <strong>get‑messages</strong> thread to see how messages are built.</p>
+<p>By default, messages are based on the dollar value of the buy. But the message building is completely programmable — it’s trivial to add messages that trigger on other things, like the time of day, the buyer address, etc. etc.</p>
+<p>A system of <strong>messages sources</strong> and <strong>message builders</strong> make this work:</p>
+<figure class="image"><img src="/r/2385631379.svg" alt="Schematic view of message building in the bot server" loading="lazy">
+<figcaption>How messages are built in the bot server.</figcaption>
+</figure>
+<script>
+/*
+<figure class="image">
+
+```mermaid
+flowchart LR
+  get_msgs(["get-messages thread"])
+  msg_src_1["Message source 1"]
+  msg_src_2["Message source 2"]
+  msg_src_n["Message source n"]
+  msg_builders_1@{ shape: procs, label: "Message builders"}
+  msg_builders_2@{ shape: procs, label: "Message builders"}
+  msg_builders_n@{ shape: procs, label: "Message builders"}
+  get_msgs-->msg_src_1
+  get_msgs-->msg_src_2
+  get_msgs-->msg_src_n
+  msg_src_1-->msg_builders_1
+  msg_src_2-->msg_builders_2
+  msg_src_n-->msg_builders_n
+```
+
+</figure>
+*/
+</script>
+<p>When a buy comes in, the <em>get‑messages</em> thread loops through each message source, and collects at most one message per source. The process looks something like this:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>- Receive a buy on the input queue
+</span></span><span style="display:flex;"><span>- For every installed message source:
+</span></span><span style="display:flex;"><span>   - Ask the source if it has a message for the given buy
+</span></span><span style="display:flex;"><span>   - If so, put the message on the correct messages queue
+</span></span></code></pre></div>
+<p>In turn, the process inside each message source looks something like this:</p>
+<div class="highlight">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>- Receive a call from the get-messages thread, asking for a message 
+</span></span><span style="display:flex;"><span>- For every installed message builder:
+</span></span><span style="display:flex;"><span>  - Ask the builder if it should trigger for the buy
+</span></span><span style="display:flex;"><span>  - If so, ask the builder to generate a message for the buy
+</span></span><span style="display:flex;"><span>  - Return the message to the get-messages thread
+</span></span></code></pre></div>
+<p>The destination for each message is set on the message level. So it’s up to the message source to specify where the message is going. Typically you would have one source per message sink. So for example you could have one message source for Telegram, one for Discord, and one for X.</p>
+<h2 id="the-other-parts-are-not-terribly-interesting">The Other Parts Are Not Terribly Interesting</h2>
+<p>So that covered the big picture architecture, and the design of the bot server.</p>
+<p>The bot clients will differ depending on their data sources. The Helius client that we use is a barebones WSGI server running on Gunicorn that listens to webhook events. For sending messages to Telegram we use the Telegram HTTP API.</p>
+<p>But those parts are not very interesting to be honest, so I’ll leave it at that and move on to the conclusion.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Am I happy with the end result? Yes.</p>
+<p>Starting out on this quest, I wanted:</p>
+<ul>
+<li>A system with as few dependencies as reasonably possible.</li>
+<li>Fully programmable messages.</li>
+<li>An easy way to add or replace buy sources.</li>
+<li>Support for sending (different) messages to multiple services, not just Telegram.</li>
+</ul>
+<p>All in all, I think the final result ticks all those boxes pretty well.</p>
+<p>Is it overly complex? Possibly. But I like how easy the design is to think about, to modify, and to test.</p>
+<h2 id="thanks-for-reading">Thanks For Reading</h2>
+<p>Well. That’s enough nerdery for today.</p>
+<p>Until next time, have a great weekend, and make sure to jump into the <a href="https://t.me/Hegequarters">Hegequarters</a> and say hi to all the Hegends in there. Good vibes guaranteed!</p>
+<p>Over and out,<br>
+<em>— Day</em> 👊</p>
+<figure class="image"><a href="/r/2689966183.webp"><img src="/r/2689966183.webp" width="1200" height="1200" alt="" loading="lazy"></a></figure>
+</div>
+</div>
+</article>
+</section>
+<section class="blog-f blog-entry-f">
+<p><em>This article was 100% written by human with 💛.</em></p>
+<p class="backlink"><a href="/blog/">← Back to the blog homepage</a></p>
+</section>
+</main>
+<footer><a href="/"><img width="132" height="33" src="/r/2607289839.svg" alt="HEGE" loading="lazy"></a>
+<ul class="btn-list">
+<li><a href="https://twitter.com/HegeCoin" target="_blank"><img width="50" height="45" alt="X logo" src="/r/2938068187.svg" loading="lazy"></a></li>
+<li><a href="https://t.me/Hegequarters" target="_blank"><img width="512" height="431" alt="Telegram logo" src="/r/2111933442.svg" loading="lazy"></a></li>
+<li><a href="https://linktr.ee/hegefund" target="_blank"><img width="80" height="98" alt="Linktree logo" src="/r/543747669.svg" loading="lazy"></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank"><img width="252" height="300" alt="DEX Screener logo" src="/r/3205571068.svg" loading="lazy"></a></li>
+</ul>
+<p>Disclaimer: $HEGE is a memecoin with no intrinsic value. Don't risk money you are afraid of losing. The price may go up or it may go down. We are not responsible for the price of the token.</p>
+<p>Copyright Hegecoin 2026</p>
+<p>Handcrafted with ❤️</p>
+</footer>
+<dialog closedby="any" id="nav-c">
+<div><a href="/" class="logo"><img width="822" height="205" src="/r/2607289839.svg" alt="HEGE"></a>
+<div><button onclick="document.getElementById('nav-c').close()"><img src="/r/82561575.svg" width="20" height="20" alt="X"></button></div>
+</div>
+<section><a href="/nfts/" title="Learn more about our NFT collection!">
+<div class="h-a" data-frames="/r/3446319882.avif;/r/168622860.avif;/r/785041076.avif;/r/1978746780.avif;/r/3685339383.avif"><img class="show" src="/r/1959589881.avif" width="750" height="750" loading="lazy" alt="Hegend 1"></div>
+<span><strong>Hegends NFTs</strong> <em>Learn more about our NFT collection!</em></span></a>
+<ul>
+<li><a href="/about/"><img src="/r/3587084489.svg" width="300" height="237" alt="Hege" fetchpriority="low" loading="lazy"> <span><strong>About</strong> <em>Learn all about $HEGE</em></span></a></li>
+<li><a href="/blog/"><img src="/r/2385211595.svg" width="375" height="456" alt="Newspaper article icon" fetchpriority="low" loading="lazy"> <span><strong>Blog</strong> <em>Read the latest about $HEGE</em></span></a></li>
+<li><a href="/league-of-hegends/"><img src="/r/3745193089.svg" width="30" height="30" alt="Globe icon" fetchpriority="low" loading="lazy"> <span><strong>League of Hegends</strong> <em>Meet our most valued community members</em></span></a></li>
+<li><a href="/testimonials/"><img src="/r/4054869380.svg" width="300" height="226" alt="Photograph icon" fetchpriority="low" loading="lazy"> <span><strong>Media</strong> <em>What's being said about $HEGE</em></span></a></li>
+<li><a href="/#faq" onclick="document.getElementById('nav-c').close()"><img src="/r/333550920.svg" width="30" height="30" alt="?" fetchpriority="low" loading="lazy"> <span><strong>FAQs</strong> <em>Answers to common questions</em></span></a></li>
+<li><a href="https://dexscreener.com/solana/cjcu7cirhbhu4bdnplgaum1a6isp9ruhjmg36rjjrxnd" target="_blank" class="ext"><img src="/r/610068670.svg" width="300" height="272" alt="Bar chart icon" fetchpriority="low" loading="lazy"> <span><strong>Price Chart</strong> <em>Track the $HEGE price by the second</em></span></a></li>
+<li><a href="https://drip.haus/hegecoin" target="_blank" class="ext"><img src="/r/407803855.svg" width="30" height="30" alt="Drop" fetchpriority="low" loading="lazy"> <span><strong>DRiP</strong> <em>Check out $HEGE on art platform DRiP</em></span></a></li>
+<li><a href="https://www.reddit.com/r/HegeCoin/" target="_blank" class="ext"><img src="/r/1609170980.svg" width="30" height="30" alt="Reddit logo" fetchpriority="low" loading="lazy"> <span><strong>Reddit</strong> <em>Join over 1,200 Hegends on Reddit!</em></span></a></li>
+<li><a href="https://capitoday.com/meme/hege-coin" target="_blank" class="ext"><img src="/r/298893401.svg" width="30" height="30" alt="Capitoday logo" fetchpriority="low" loading="lazy"> <span><strong>Capitoday</strong> <em>Track and vote for $HEGE on Capitoday</em></span></a></li>
+</ul>
+</section>
+</dialog>
+<template id="geoblock-msg-template">
+<div class="heavy plain box">
+<h1>Sorry!</h1>
+<p>Based on your location, you are not allowed to access the Hege website.</p>
+<p>Because of legal uncertainties, we are forced to block visitors from the following countries:</p>
+<ul>
+<li>United Kingdom</li>
+</ul>
+</div>
+</template>
+</body>
+</html>
